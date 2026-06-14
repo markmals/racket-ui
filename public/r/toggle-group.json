@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "toggle-group",
+  "title": "Toggle Group",
+  "description": "A set of two-state buttons that can be toggled independently or as a single-choice group.",
+  "dependencies": [
+    "react-aria-components"
+  ],
+  "registryDependencies": [
+    "@racket-ui/cva",
+    "@racket-ui/toggle"
+  ],
+  "files": [
+    {
+      "path": "registry/default/toggle-group/toggle-group.tsx",
+      "content": "\"use client\";\n\n// Classification: A — direct React Aria Components replacement (RAC\n// ToggleButtonGroup + ToggleButton). Compat note: ToggleGroupItem accepts\n// `value` as a shadcn-style alias for React Aria's `id`.\n\nimport { createContext, useContext, type CSSProperties } from \"react\";\nimport {\n    ToggleButton as AriaToggleButton,\n    ToggleButtonGroup as AriaToggleButtonGroup,\n    type ToggleButtonGroupProps as AriaToggleButtonGroupProps,\n    type ToggleButtonProps as AriaToggleButtonProps,\n    composeRenderProps,\n} from \"react-aria-components\";\n\nimport { toggleVariants } from \"@/components/ui/toggle\";\nimport { cx, type VariantProps } from \"@/lib/cva\";\n\nlet ToggleGroupContext = createContext<\n    VariantProps<typeof toggleVariants> & {\n        spacing?: number;\n    }\n>({\n    size: \"default\",\n    variant: \"default\",\n    spacing: 0,\n});\n\nexport interface ToggleGroupProps\n    extends AriaToggleButtonGroupProps, VariantProps<typeof toggleVariants> {\n    spacing?: number;\n}\n\nfunction ToggleGroup({\n    className,\n    variant,\n    size,\n    spacing = 0,\n    style,\n    children,\n    ...props\n}: ToggleGroupProps) {\n    return (\n        <AriaToggleButtonGroup\n            className={composeRenderProps(className, className =>\n                cx(\n                    \"group/toggle-group flex w-fit items-center gap-[--spacing(var(--gap))] rounded-md data-[spacing=default]:data-[variant=outline]:shadow-xs\",\n                    className,\n                ),\n            )}\n            data-size={size}\n            data-slot=\"toggle-group\"\n            data-spacing={spacing}\n            data-variant={variant}\n            style={composeRenderProps(\n                style,\n                style =>\n                    ({\n                        ...style,\n                        \"--gap\": spacing,\n                    }) as CSSProperties,\n            )}\n            {...props}\n        >\n            {composeRenderProps(children, children => (\n                <ToggleGroupContext.Provider value={{ variant, size, spacing }}>\n                    {children}\n                </ToggleGroupContext.Provider>\n            ))}\n        </AriaToggleButtonGroup>\n    );\n}\n\nexport interface ToggleGroupItemProps\n    extends Omit<AriaToggleButtonProps, \"id\">, VariantProps<typeof toggleVariants> {\n    id?: AriaToggleButtonProps[\"id\"];\n    value?: AriaToggleButtonProps[\"id\"];\n}\n\nfunction ToggleGroupItem({ className, variant, size, id, value, ...props }: ToggleGroupItemProps) {\n    let context = useContext(ToggleGroupContext);\n    let itemVariant = context.variant || variant;\n    let itemSize = context.size || size;\n\n    return (\n        <AriaToggleButton\n            className={composeRenderProps(className, className =>\n                cx(\n                    toggleVariants({\n                        variant: itemVariant,\n                        size: itemSize,\n                    }),\n                    \"w-auto min-w-0 shrink-0 px-3 data-[focus-visible]:z-10 data-[focused]:z-10\",\n                    \"data-[spacing=0]:rounded-none data-[spacing=0]:shadow-none data-[spacing=0]:first:rounded-l-md data-[spacing=0]:last:rounded-r-md data-[spacing=0]:data-[variant=outline]:border-l-0 data-[spacing=0]:data-[variant=outline]:first:border-l\",\n                    className,\n                ),\n            )}\n            data-size={itemSize}\n            data-slot=\"toggle-group-item\"\n            data-spacing={context.spacing}\n            data-variant={itemVariant}\n            id={id ?? value}\n            {...props}\n        />\n    );\n}\n\nexport { ToggleGroup, ToggleGroupItem };\n",
+      "type": "registry:ui",
+      "target": "components/ui/toggle-group.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

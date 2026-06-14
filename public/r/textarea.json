@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "textarea",
+  "title": "Textarea",
+  "description": "A styled multi-line text input.",
+  "registryDependencies": [
+    "@racket-ui/cva"
+  ],
+  "files": [
+    {
+      "path": "registry/default/textarea/textarea.tsx",
+      "content": "// Classification: C — plain `<textarea>` (matches shadcn drop-in usage).\n\nimport type { ComponentProps } from \"react\";\n\nimport { cx } from \"@/lib/cva\";\n\nfunction Textarea({ className, ...props }: ComponentProps<\"textarea\">) {\n    return (\n        <textarea\n            className={cx(\n                \"flex field-sizing-content min-h-16 w-full rounded-md border border-input bg-transparent px-3 py-2 text-base shadow-xs transition-[color,box-shadow] outline-none placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 md:text-sm dark:bg-input/30 dark:aria-invalid:ring-destructive/40\",\n                className,\n            )}\n            data-slot=\"textarea\"\n            {...props}\n        />\n    );\n}\n\nexport { Textarea };\n",
+      "type": "registry:ui",
+      "target": "components/ui/textarea.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "spinner",
+  "title": "Spinner",
+  "description": "An animated loading indicator using a Tabler icon.",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@racket-ui/cva"
+  ],
+  "files": [
+    {
+      "path": "registry/default/spinner/spinner.tsx",
+      "content": "// Classification: A — static component (Tabler icon).\n\nimport { IconLoader2, type IconProps } from \"@tabler/icons-react\";\n\nimport { cx } from \"@/lib/cva\";\n\nfunction Spinner({ className, ...props }: IconProps) {\n    return (\n        <IconLoader2\n            aria-label=\"Loading\"\n            className={cx(\"size-4 animate-spin\", className)}\n            role=\"status\"\n            {...props}\n        />\n    );\n}\n\nexport { Spinner };\n",
+      "type": "registry:ui",
+      "target": "components/ui/spinner.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "avatar",
+  "title": "Avatar",
+  "description": "A local avatar primitive with image loading fallback behavior.",
+  "dependencies": [],
+  "registryDependencies": [
+    "@racket-ui/cva"
+  ],
+  "files": [
+    {
+      "path": "registry/default/avatar/avatar.tsx",
+      "content": "\"use client\";\n\n// Classification: A — local component (no React Aria primitive needed).\n\nimport {\n    createContext,\n    useContext,\n    useEffect,\n    useState,\n    type ComponentProps,\n    type Dispatch,\n    type SetStateAction,\n} from \"react\";\n\nimport { cx } from \"@/lib/cva\";\n\ntype ImageLoadingStatus = \"loading\" | \"loaded\" | \"error\";\n\ninterface AvatarContextValue {\n    imageLoadingStatus: ImageLoadingStatus;\n    setImageLoadingStatus: Dispatch<SetStateAction<ImageLoadingStatus>>;\n}\n\nlet AvatarContext = createContext<AvatarContextValue | null>(null);\n\nfunction Avatar({ className, ...props }: ComponentProps<\"span\">) {\n    let [imageLoadingStatus, setImageLoadingStatus] = useState<ImageLoadingStatus>(\"error\");\n\n    return (\n        <AvatarContext.Provider value={{ imageLoadingStatus, setImageLoadingStatus }}>\n            <span\n                className={cx(\n                    \"relative flex size-8 shrink-0 overflow-hidden rounded-full\",\n                    className,\n                )}\n                data-slot=\"avatar\"\n                {...props}\n            />\n        </AvatarContext.Provider>\n    );\n}\n\nfunction AvatarImage({ className, onError, onLoad, src, srcSet, ...props }: ComponentProps<\"img\">) {\n    let context = useContext(AvatarContext);\n    let imageLoadingStatus = context?.imageLoadingStatus;\n    let setImageLoadingStatus = context?.setImageLoadingStatus;\n\n    useEffect(() => {\n        setImageLoadingStatus?.(src || srcSet ? \"loading\" : \"error\");\n    }, [setImageLoadingStatus, src, srcSet]);\n\n    return (\n        <img\n            className={cx(\"aspect-square size-full\", className)}\n            data-slot=\"avatar-image\"\n            hidden={imageLoadingStatus ? imageLoadingStatus !== \"loaded\" : undefined}\n            onError={event => {\n                setImageLoadingStatus?.(\"error\");\n                onError?.(event);\n            }}\n            onLoad={event => {\n                setImageLoadingStatus?.(\"loaded\");\n                onLoad?.(event);\n            }}\n            src={src}\n            srcSet={srcSet}\n            {...props}\n        />\n    );\n}\n\nfunction AvatarFallback({ className, ...props }: ComponentProps<\"span\">) {\n    let context = useContext(AvatarContext);\n\n    if (context?.imageLoadingStatus === \"loaded\") {\n        return null;\n    }\n\n    return (\n        <span\n            className={cx(\n                \"flex size-full items-center justify-center rounded-full bg-muted\",\n                className,\n            )}\n            data-slot=\"avatar-fallback\"\n            {...props}\n        />\n    );\n}\n\nexport { Avatar, AvatarImage, AvatarFallback };\n",
+      "type": "registry:ui",
+      "target": "components/ui/avatar.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

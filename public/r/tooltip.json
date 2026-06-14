@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tooltip",
+  "title": "Tooltip",
+  "description": "A contextual hint built on React Aria Tooltip.",
+  "dependencies": [
+    "react-aria-components"
+  ],
+  "registryDependencies": [
+    "@racket-ui/cva"
+  ],
+  "files": [
+    {
+      "path": "registry/default/tooltip/tooltip.tsx",
+      "content": "\"use client\";\n\n// Classification: A/B — React Aria (TooltipTrigger / Tooltip / OverlayArrow).\n// Notes: React Aria has no provider, so `TooltipProvider` is a pass-through and\n// the delay lives on each `Tooltip` (`delay`/`closeDelay`, defaulted to shadcn's\n// instant behavior). Animations use `data-[entering]`/`data-[exiting]`.\n\nimport {\n    OverlayArrow,\n    Tooltip as AriaTooltip,\n    type TooltipProps as AriaTooltipProps,\n    TooltipTrigger as AriaTooltipTrigger,\n    type TooltipTriggerComponentProps,\n    composeRenderProps,\n} from \"react-aria-components\";\n\nimport { cx } from \"@/lib/cva\";\n\nfunction TooltipProvider({ children }: { children: React.ReactNode }) {\n    return <>{children}</>;\n}\n\nfunction Tooltip({ delay = 0, closeDelay = 0, ...props }: TooltipTriggerComponentProps) {\n    return <AriaTooltipTrigger closeDelay={closeDelay} delay={delay} {...props} />;\n}\n\nfunction TooltipTrigger({ children }: { children: React.ReactNode }) {\n    return <>{children}</>;\n}\n\nexport interface TooltipContentProps extends AriaTooltipProps {\n    sideOffset?: number;\n}\n\nfunction TooltipContent({ className, sideOffset = 0, children, ...props }: TooltipContentProps) {\n    return (\n        <AriaTooltip\n            className={composeRenderProps(className, className =>\n                cx(\n                    \"z-50 w-fit rounded-md bg-foreground px-3 py-1.5 text-xs text-balance text-background\",\n                    \"data-[entering]:animate-in data-[entering]:fade-in-0 data-[entering]:zoom-in-95\",\n                    \"data-[exiting]:animate-out data-[exiting]:fade-out-0 data-[exiting]:zoom-out-95\",\n                    \"data-[placement=bottom]:slide-in-from-top-2 data-[placement=left]:slide-in-from-right-2 data-[placement=right]:slide-in-from-left-2 data-[placement=top]:slide-in-from-bottom-2\",\n                    className,\n                ),\n            )}\n            data-slot=\"tooltip-content\"\n            offset={sideOffset}\n            {...props}\n        >\n            {composeRenderProps(children, children => (\n                <>\n                    <OverlayArrow className=\"group\">\n                        {/* A real triangle (not a rotated square) that points at the\n                trigger; React Aria sets data-placement so we rotate per side. */}\n                        <svg\n                            aria-hidden=\"true\"\n                            className=\"block fill-foreground group-data-[placement=bottom]:rotate-180 group-data-[placement=left]:-rotate-90 group-data-[placement=right]:rotate-90\"\n                            height={5}\n                            viewBox=\"0 0 10 5\"\n                            width={10}\n                        >\n                            <path d=\"M0 0 L5 5 L10 0 Z\" />\n                        </svg>\n                    </OverlayArrow>\n                    {children}\n                </>\n            ))}\n        </AriaTooltip>\n    );\n}\n\nexport { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider };\n",
+      "type": "registry:ui",
+      "target": "components/ui/tooltip.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

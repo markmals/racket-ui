@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "progress",
+  "title": "Progress",
+  "description": "A progress indicator built on React Aria ProgressBar.",
+  "dependencies": [
+    "react-aria-components"
+  ],
+  "registryDependencies": [
+    "@racket-ui/cva"
+  ],
+  "files": [
+    {
+      "path": "registry/default/progress/progress.tsx",
+      "content": "\"use client\";\n\n// Classification: A — direct React Aria Components replacement (RAC ProgressBar).\n\nimport {\n    ProgressBar as AriaProgressBar,\n    type ProgressBarProps as AriaProgressBarProps,\n    composeRenderProps,\n} from \"react-aria-components\";\n\nimport { cva, cx } from \"@/lib/cva\";\n\nlet progressVariants = cva({\n    base: \"relative h-2 w-full overflow-hidden rounded-full bg-primary/20\",\n});\n\nfunction Progress({ className, children: _children, ...props }: AriaProgressBarProps) {\n    return (\n        <AriaProgressBar\n            className={composeRenderProps(className, className => progressVariants({ className }))}\n            data-slot=\"progress\"\n            {...props}\n        >\n            {({ percentage }) => (\n                <div\n                    className={cx(\"h-full w-full flex-1 bg-primary transition-all\")}\n                    data-slot=\"progress-indicator\"\n                    style={{ transform: `translateX(-${100 - (percentage ?? 0)}%)` }}\n                />\n            )}\n        </AriaProgressBar>\n    );\n}\n\nexport { Progress };\n",
+      "type": "registry:ui",
+      "target": "components/ui/progress.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

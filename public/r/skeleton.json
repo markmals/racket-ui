@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "skeleton",
+  "title": "Skeleton",
+  "description": "A placeholder shimmer for loading states.",
+  "registryDependencies": [
+    "@racket-ui/cva"
+  ],
+  "files": [
+    {
+      "path": "registry/default/skeleton/skeleton.tsx",
+      "content": "// Classification: A — static component.\n\nimport type { ComponentProps } from \"react\";\n\nimport { cx } from \"@/lib/cva\";\n\nfunction Skeleton({ className, ...props }: ComponentProps<\"div\">) {\n    return (\n        <div\n            className={cx(\"animate-pulse rounded-md bg-accent\", className)}\n            data-slot=\"skeleton\"\n            {...props}\n        />\n    );\n}\n\nexport { Skeleton };\n",
+      "type": "registry:ui",
+      "target": "components/ui/skeleton.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

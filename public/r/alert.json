@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert",
+  "title": "Alert",
+  "description": "A callout for user attention, with default and destructive variants.",
+  "registryDependencies": [
+    "@racket-ui/cva"
+  ],
+  "files": [
+    {
+      "path": "registry/default/alert/alert.tsx",
+      "content": "// Classification: A — static component (cva only).\n\nimport type { ComponentProps } from \"react\";\n\nimport { cva, cx, type VariantProps } from \"@/lib/cva\";\n\nlet alertVariants = cva({\n    base: \"relative grid w-full grid-cols-[0_1fr] items-start gap-y-0.5 rounded-lg border px-4 py-3 text-sm has-[>svg]:grid-cols-[calc(var(--spacing)*4)_1fr] has-[>svg]:gap-x-3 [&>svg]:size-4 [&>svg]:translate-y-0.5 [&>svg]:text-current\",\n    variants: {\n        variant: {\n            default: \"bg-card text-card-foreground\",\n            destructive:\n                \"bg-card text-destructive *:data-[slot=alert-description]:text-destructive/90 [&>svg]:text-current\",\n        },\n    },\n    defaultVariants: {\n        variant: \"default\",\n    },\n});\n\nexport interface AlertProps extends ComponentProps<\"div\">, VariantProps<typeof alertVariants> {}\n\nfunction Alert({ className, variant, ...props }: AlertProps) {\n    return (\n        <div\n            className={alertVariants({ variant, className })}\n            data-slot=\"alert\"\n            role=\"alert\"\n            {...props}\n        />\n    );\n}\n\nfunction AlertTitle({ className, ...props }: ComponentProps<\"div\">) {\n    return (\n        <div\n            className={cx(\"col-start-2 line-clamp-1 min-h-4 font-medium tracking-tight\", className)}\n            data-slot=\"alert-title\"\n            {...props}\n        />\n    );\n}\n\nfunction AlertDescription({ className, ...props }: ComponentProps<\"div\">) {\n    return (\n        <div\n            className={cx(\n                \"col-start-2 grid justify-items-start gap-1 text-sm text-muted-foreground [&_p]:leading-relaxed\",\n                className,\n            )}\n            data-slot=\"alert-description\"\n            {...props}\n        />\n    );\n}\n\nexport { Alert, AlertTitle, AlertDescription };\n",
+      "type": "registry:ui",
+      "target": "components/ui/alert.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

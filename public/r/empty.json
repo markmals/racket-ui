@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "empty",
+  "title": "Empty",
+  "description": "A flexible empty state layout for missing or unavailable content.",
+  "dependencies": [],
+  "registryDependencies": [
+    "@racket-ui/cva"
+  ],
+  "files": [
+    {
+      "path": "registry/default/empty/empty.tsx",
+      "content": "// Classification: A — static component (cva only).\n\nimport type { ComponentProps } from \"react\";\n\nimport { cva, cx, type VariantProps } from \"@/lib/cva\";\n\nlet emptyMediaVariants = cva({\n    base: \"mb-2 flex shrink-0 items-center justify-center [&_svg]:pointer-events-none [&_svg]:shrink-0\",\n    variants: {\n        variant: {\n            default: \"bg-transparent\",\n            icon: \"flex size-10 shrink-0 items-center justify-center rounded-lg bg-muted text-foreground [&_svg:not([class*='size-'])]:size-6\",\n        },\n    },\n    defaultVariants: {\n        variant: \"default\",\n    },\n});\n\nfunction Empty({ className, ...props }: ComponentProps<\"div\">) {\n    return (\n        <div\n            className={cx(\n                \"flex min-w-0 flex-1 flex-col items-center justify-center gap-6 rounded-lg border-dashed p-6 text-center text-balance md:p-12\",\n                className,\n            )}\n            data-slot=\"empty\"\n            {...props}\n        />\n    );\n}\n\nfunction EmptyHeader({ className, ...props }: ComponentProps<\"div\">) {\n    return (\n        <div\n            className={cx(\"flex max-w-sm flex-col items-center gap-2 text-center\", className)}\n            data-slot=\"empty-header\"\n            {...props}\n        />\n    );\n}\n\ninterface EmptyMediaProps extends ComponentProps<\"div\">, VariantProps<typeof emptyMediaVariants> {}\n\nfunction EmptyMedia({ className, variant = \"default\", ...props }: EmptyMediaProps) {\n    return (\n        <div\n            className={emptyMediaVariants({ variant, className })}\n            data-slot=\"empty-icon\"\n            data-variant={variant}\n            {...props}\n        />\n    );\n}\n\nfunction EmptyTitle({ className, ...props }: ComponentProps<\"div\">) {\n    return (\n        <div\n            className={cx(\"text-lg font-medium tracking-tight\", className)}\n            data-slot=\"empty-title\"\n            {...props}\n        />\n    );\n}\n\nfunction EmptyDescription({ className, ...props }: ComponentProps<\"p\">) {\n    return (\n        <div\n            className={cx(\n                \"text-sm/relaxed text-muted-foreground [&>a]:underline [&>a]:underline-offset-4 [&>a:hover]:text-primary\",\n                className,\n            )}\n            data-slot=\"empty-description\"\n            {...props}\n        />\n    );\n}\n\nfunction EmptyContent({ className, ...props }: ComponentProps<\"div\">) {\n    return (\n        <div\n            className={cx(\n                \"flex w-full max-w-sm min-w-0 flex-col items-center gap-4 text-sm text-balance\",\n                className,\n            )}\n            data-slot=\"empty-content\"\n            {...props}\n        />\n    );\n}\n\nexport {\n    Empty,\n    EmptyHeader,\n    EmptyTitle,\n    EmptyDescription,\n    EmptyContent,\n    EmptyMedia,\n    emptyMediaVariants,\n};\n",
+      "type": "registry:ui",
+      "target": "components/ui/empty.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "label",
+  "title": "Label",
+  "description": "An accessible form label.",
+  "registryDependencies": [
+    "@racket-ui/cva"
+  ],
+  "files": [
+    {
+      "path": "registry/default/label/label.tsx",
+      "content": "// Classification: C — plain `<label>` for shadcn drop-in usage (`htmlFor`).\n// React Aria's `Label` is used inside field composition (see the `field`\n// component); standalone, a native label preserves the shadcn API exactly.\n\nimport type { ComponentProps } from \"react\";\n\nimport { cx } from \"@/lib/cva\";\n\nfunction Label({ className, ...props }: ComponentProps<\"label\">) {\n    return (\n        <label\n            className={cx(\n                \"flex items-center gap-2 text-sm leading-none font-medium select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50\",\n                className,\n            )}\n            data-slot=\"label\"\n            {...props}\n        />\n    );\n}\n\nexport { Label };\n",
+      "type": "registry:ui",
+      "target": "components/ui/label.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

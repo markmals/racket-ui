@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "separator",
+  "title": "Separator",
+  "description": "A visual or semantic divider, built on React Aria Separator.",
+  "dependencies": [
+    "react-aria-components"
+  ],
+  "registryDependencies": [
+    "@racket-ui/cva"
+  ],
+  "files": [
+    {
+      "path": "registry/default/separator/separator.tsx",
+      "content": "\"use client\";\n\n// Classification: A — direct React Aria Components replacement (RAC Separator).\n\nimport { Separator as AriaSeparator, type SeparatorProps } from \"react-aria-components\";\n\nimport { cva } from \"@/lib/cva\";\n\nlet separatorVariants = cva({\n    base: \"shrink-0 bg-border\",\n    variants: {\n        orientation: {\n            horizontal: \"h-px w-full\",\n            vertical: \"h-full w-px\",\n        },\n    },\n    defaultVariants: {\n        orientation: \"horizontal\",\n    },\n});\n\nfunction Separator({ className, orientation = \"horizontal\", ...props }: SeparatorProps) {\n    return (\n        <AriaSeparator\n            className={separatorVariants({ orientation, className })}\n            data-slot=\"separator\"\n            orientation={orientation}\n            {...props}\n        />\n    );\n}\n\nexport { Separator };\n",
+      "type": "registry:ui",
+      "target": "components/ui/separator.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

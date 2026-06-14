@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "breadcrumb",
+  "title": "Breadcrumb",
+  "description": "Displays the path to the current resource using static navigation semantics.",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@racket-ui/cva"
+  ],
+  "files": [
+    {
+      "path": "registry/default/breadcrumb/breadcrumb.tsx",
+      "content": "// Classification: A — static component.\n\nimport type { ComponentProps } from \"react\";\n\nimport { IconChevronRight, IconDots } from \"@tabler/icons-react\";\n\nimport { cx } from \"@/lib/cva\";\n\nfunction Breadcrumb({ ...props }: ComponentProps<\"nav\">) {\n    return <nav aria-label=\"breadcrumb\" data-slot=\"breadcrumb\" {...props} />;\n}\n\nfunction BreadcrumbList({ className, ...props }: ComponentProps<\"ol\">) {\n    return (\n        <ol\n            className={cx(\n                \"flex flex-wrap items-center gap-1.5 text-sm break-words text-muted-foreground sm:gap-2.5\",\n                className,\n            )}\n            data-slot=\"breadcrumb-list\"\n            {...props}\n        />\n    );\n}\n\nfunction BreadcrumbItem({ className, ...props }: ComponentProps<\"li\">) {\n    return (\n        <li\n            className={cx(\"inline-flex items-center gap-1.5\", className)}\n            data-slot=\"breadcrumb-item\"\n            {...props}\n        />\n    );\n}\n\nfunction BreadcrumbLink({ className, ...props }: ComponentProps<\"a\">) {\n    return (\n        <a\n            className={cx(\"transition-colors hover:text-foreground\", className)}\n            data-slot=\"breadcrumb-link\"\n            {...props}\n        />\n    );\n}\n\nfunction BreadcrumbPage({ className, ...props }: ComponentProps<\"span\">) {\n    return (\n        <span\n            aria-current=\"page\"\n            aria-disabled=\"true\"\n            className={cx(\"font-normal text-foreground\", className)}\n            data-slot=\"breadcrumb-page\"\n            role=\"link\"\n            {...props}\n        />\n    );\n}\n\nfunction BreadcrumbSeparator({ children, className, ...props }: ComponentProps<\"li\">) {\n    return (\n        <li\n            aria-hidden=\"true\"\n            className={cx(\"[&>svg]:size-3.5\", className)}\n            data-slot=\"breadcrumb-separator\"\n            role=\"presentation\"\n            {...props}\n        >\n            {children ?? <IconChevronRight />}\n        </li>\n    );\n}\n\nfunction BreadcrumbEllipsis({ className, ...props }: ComponentProps<\"span\">) {\n    return (\n        <span\n            aria-hidden=\"true\"\n            className={cx(\"flex size-9 items-center justify-center\", className)}\n            data-slot=\"breadcrumb-ellipsis\"\n            role=\"presentation\"\n            {...props}\n        >\n            <IconDots className=\"size-4\" />\n            <span className=\"sr-only\">More</span>\n        </span>\n    );\n}\n\nexport {\n    Breadcrumb,\n    BreadcrumbList,\n    BreadcrumbItem,\n    BreadcrumbLink,\n    BreadcrumbPage,\n    BreadcrumbSeparator,\n    BreadcrumbEllipsis,\n};\n",
+      "type": "registry:ui",
+      "target": "components/ui/breadcrumb.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

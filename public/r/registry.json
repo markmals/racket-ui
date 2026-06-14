@@ -1,0 +1,1215 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "racket-ui",
+  "homepage": "https://racket-ui.malstrom.me",
+  "items": [
+    {
+      "name": "cva",
+      "type": "registry:lib",
+      "title": "CVA",
+      "description": "Configured cva@beta helpers (cva, cx, compose) wired to tailwind-merge. Replaces the classic shadcn cn helper.",
+      "dependencies": [
+        "cva@beta",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "registry/default/lib/cva.ts",
+          "type": "registry:lib",
+          "target": "lib/cva.ts"
+        }
+      ]
+    },
+    {
+      "name": "base",
+      "type": "registry:style",
+      "extends": "none",
+      "title": "Base",
+      "description": "Base Tailwind v4 styles, design tokens, core dependencies, and the configured cva helper for the React Aria shadcn-compatible registry.",
+      "dependencies": [
+        "@tabler/icons-react",
+        "cva@beta",
+        "react-aria-components",
+        "tailwind-merge"
+      ],
+      "devDependencies": [
+        "tw-animate-css"
+      ],
+      "registryDependencies": [
+        "@racket-ui/cva"
+      ],
+      "files": [
+        {
+          "path": "registry/default/base/globals.css",
+          "type": "registry:file",
+          "target": "app/globals.css"
+        }
+      ],
+      "cssVars": {}
+    },
+    {
+      "name": "accordion",
+      "type": "registry:ui",
+      "title": "Accordion",
+      "description": "A vertically stacked set of interactive headings that reveal associated content sections.",
+      "dependencies": [
+        "react-aria-components",
+        "@tabler/icons-react"
+      ],
+      "registryDependencies": [
+        "@racket-ui/cva"
+      ],
+      "files": [
+        {
+          "path": "registry/default/accordion/accordion.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/accordion.tsx"
+        }
+      ]
+    },
+    {
+      "name": "alert",
+      "type": "registry:ui",
+      "title": "Alert",
+      "description": "A callout for user attention, with default and destructive variants.",
+      "registryDependencies": [
+        "@racket-ui/cva"
+      ],
+      "files": [
+        {
+          "path": "registry/default/alert/alert.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/alert.tsx"
+        }
+      ]
+    },
+    {
+      "name": "alert-dialog",
+      "type": "registry:ui",
+      "title": "Alert Dialog",
+      "description": "A modal dialog that interrupts the user with important content and requires a response.",
+      "dependencies": [
+        "react-aria-components"
+      ],
+      "registryDependencies": [
+        "@racket-ui/cva",
+        "@racket-ui/button"
+      ],
+      "files": [
+        {
+          "path": "registry/default/alert-dialog/alert-dialog.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/alert-dialog.tsx"
+        }
+      ]
+    },
+    {
+      "name": "aspect-ratio",
+      "type": "registry:ui",
+      "title": "Aspect Ratio",
+      "description": "A static layout wrapper that preserves a chosen aspect ratio.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@racket-ui/cva"
+      ],
+      "files": [
+        {
+          "path": "registry/default/aspect-ratio/aspect-ratio.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/aspect-ratio.tsx"
+        }
+      ]
+    },
+    {
+      "name": "avatar",
+      "type": "registry:ui",
+      "title": "Avatar",
+      "description": "A local avatar primitive with image loading fallback behavior.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@racket-ui/cva"
+      ],
+      "files": [
+        {
+          "path": "registry/default/avatar/avatar.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/avatar.tsx"
+        }
+      ]
+    },
+    {
+      "name": "badge",
+      "type": "registry:ui",
+      "title": "Badge",
+      "description": "A small status descriptor built with cva@beta and tailwind-merge.",
+      "registryDependencies": [
+        "@racket-ui/cva"
+      ],
+      "files": [
+        {
+          "path": "registry/default/badge/badge.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/badge.tsx"
+        }
+      ]
+    },
+    {
+      "name": "breadcrumb",
+      "type": "registry:ui",
+      "title": "Breadcrumb",
+      "description": "Displays the path to the current resource using static navigation semantics.",
+      "dependencies": [
+        "@tabler/icons-react"
+      ],
+      "registryDependencies": [
+        "@racket-ui/cva"
+      ],
+      "files": [
+        {
+          "path": "registry/default/breadcrumb/breadcrumb.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/breadcrumb.tsx"
+        }
+      ]
+    },
+    {
+      "name": "button",
+      "type": "registry:ui",
+      "title": "Button",
+      "description": "A shadcn-compatible button built with React Aria Components, Tailwind v4, cva@beta, and tailwind-merge.",
+      "dependencies": [
+        "react-aria-components"
+      ],
+      "registryDependencies": [
+        "@racket-ui/cva"
+      ],
+      "files": [
+        {
+          "path": "registry/default/button/button.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/button.tsx"
+        }
+      ]
+    },
+    {
+      "name": "button-group",
+      "type": "registry:ui",
+      "title": "Button Group",
+      "description": "A static button grouping layout with shadcn-compatible orientation variants.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@racket-ui/cva"
+      ],
+      "files": [
+        {
+          "path": "registry/default/button-group/button-group.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/button-group.tsx"
+        }
+      ]
+    },
+    {
+      "name": "calendar",
+      "type": "registry:ui",
+      "title": "Calendar",
+      "description": "A date picker calendar built with React Aria Components.",
+      "dependencies": [
+        "react-aria-components",
+        "@tabler/icons-react"
+      ],
+      "registryDependencies": [
+        "@racket-ui/cva",
+        "@racket-ui/button"
+      ],
+      "files": [
+        {
+          "path": "registry/default/calendar/calendar.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/calendar.tsx"
+        }
+      ]
+    },
+    {
+      "name": "card",
+      "type": "registry:ui",
+      "title": "Card",
+      "description": "A content container with header, content, and footer sections.",
+      "registryDependencies": [
+        "@racket-ui/cva"
+      ],
+      "files": [
+        {
+          "path": "registry/default/card/card.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "carousel",
+      "type": "registry:ui",
+      "title": "Carousel",
+      "description": "A carousel component with keyboard navigation built on embla-carousel-react.",
+      "dependencies": [
+        "embla-carousel-react",
+        "@tabler/icons-react"
+      ],
+      "registryDependencies": [
+        "@racket-ui/cva",
+        "@racket-ui/button"
+      ],
+      "files": [
+        {
+          "path": "registry/default/carousel/carousel.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/carousel.tsx"
+        }
+      ]
+    },
+    {
+      "name": "chart",
+      "type": "registry:ui",
+      "title": "Chart",
+      "description": "A recharts-based chart container with CSS-variable theming, tooltip, and legend components.",
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "@racket-ui/cva"
+      ],
+      "files": [
+        {
+          "path": "registry/default/chart/chart.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/chart.tsx"
+        }
+      ]
+    },
+    {
+      "name": "checkbox",
+      "type": "registry:ui",
+      "title": "Checkbox",
+      "description": "A checkbox built on React Aria Checkbox with Tabler indicators.",
+      "dependencies": [
+        "react-aria-components",
+        "@tabler/icons-react"
+      ],
+      "registryDependencies": [
+        "@racket-ui/cva"
+      ],
+      "files": [
+        {
+          "path": "registry/default/checkbox/checkbox.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/checkbox.tsx"
+        }
+      ]
+    },
+    {
+      "name": "collapsible",
+      "type": "registry:ui",
+      "title": "Collapsible",
+      "description": "An interactive disclosure primitive for showing and hiding content.",
+      "dependencies": [
+        "react-aria-components"
+      ],
+      "registryDependencies": [
+        "@racket-ui/cva"
+      ],
+      "files": [
+        {
+          "path": "registry/default/collapsible/collapsible.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/collapsible.tsx"
+        }
+      ]
+    },
+    {
+      "name": "color-picker",
+      "type": "registry:ui",
+      "title": "Color Picker",
+      "description": "A color picker built with React Aria Components featuring a 2D color area, hue slider, hex input, and optional preset swatches.",
+      "dependencies": [
+        "react-aria-components"
+      ],
+      "registryDependencies": [
+        "@racket-ui/cva",
+        "@racket-ui/button"
+      ],
+      "files": [
+        {
+          "path": "registry/default/color-picker/color-picker.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/color-picker.tsx"
+        }
+      ]
+    },
+    {
+      "name": "combobox",
+      "type": "registry:ui",
+      "title": "Combobox",
+      "description": "A searchable select control built with React Aria Components.",
+      "dependencies": [
+        "react-aria-components",
+        "@tabler/icons-react"
+      ],
+      "registryDependencies": [
+        "@racket-ui/cva"
+      ],
+      "files": [
+        {
+          "path": "registry/default/combobox/combobox.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/combobox.tsx"
+        }
+      ]
+    },
+    {
+      "name": "command",
+      "type": "registry:ui",
+      "title": "Command",
+      "description": "A command palette component built on React Aria Autocomplete and Menu, providing keyboard-driven search and navigation over a filterable list of actions.",
+      "dependencies": [
+        "react-aria-components",
+        "@tabler/icons-react"
+      ],
+      "registryDependencies": [
+        "@racket-ui/cva",
+        "@racket-ui/dialog"
+      ],
+      "files": [
+        {
+          "path": "registry/default/command/command.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/command.tsx"
+        }
+      ]
+    },
+    {
+      "name": "context-menu",
+      "type": "registry:ui",
+      "title": "Context Menu",
+      "description": "Displays a right-click menu of actions using a local React Aria Menu and Popover positioned at the cursor.",
+      "dependencies": [
+        "react-aria-components",
+        "@tabler/icons-react"
+      ],
+      "registryDependencies": [
+        "@racket-ui/cva"
+      ],
+      "files": [
+        {
+          "path": "registry/default/context-menu/context-menu.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/context-menu.tsx"
+        }
+      ]
+    },
+    {
+      "name": "date-picker",
+      "type": "registry:ui",
+      "title": "Date Picker",
+      "description": "A date picker combining a keyboard-editable date input with a calendar popover, built on React Aria Components.",
+      "dependencies": [
+        "react-aria-components",
+        "@tabler/icons-react",
+        "@internationalized/date"
+      ],
+      "registryDependencies": [
+        "@racket-ui/cva",
+        "@racket-ui/button"
+      ],
+      "files": [
+        {
+          "path": "registry/default/date-picker/date-picker.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/date-picker.tsx"
+        }
+      ]
+    },
+    {
+      "name": "date-range-picker",
+      "type": "registry:ui",
+      "title": "Date Range Picker",
+      "description": "A date range picker combining two editable date inputs and a range calendar popover, built on React Aria Components.",
+      "dependencies": [
+        "react-aria-components",
+        "@tabler/icons-react",
+        "@internationalized/date"
+      ],
+      "registryDependencies": [
+        "@racket-ui/cva",
+        "@racket-ui/button",
+        "@racket-ui/calendar"
+      ],
+      "files": [
+        {
+          "path": "registry/default/date-range-picker/date-range-picker.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/date-range-picker.tsx"
+        }
+      ]
+    },
+    {
+      "name": "dialog",
+      "type": "registry:ui",
+      "title": "Dialog",
+      "description": "A modal dialog built on React Aria's overlay primitives.",
+      "dependencies": [
+        "react-aria-components",
+        "@tabler/icons-react"
+      ],
+      "registryDependencies": [
+        "@racket-ui/cva",
+        "@racket-ui/button"
+      ],
+      "files": [
+        {
+          "path": "registry/default/dialog/dialog.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/dialog.tsx"
+        }
+      ]
+    },
+    {
+      "name": "drawer",
+      "type": "registry:ui",
+      "title": "Drawer",
+      "description": "A drag-to-dismiss drawer built on vaul with direction support and shadcn-compatible exports.",
+      "dependencies": [
+        "vaul"
+      ],
+      "registryDependencies": [
+        "@racket-ui/cva"
+      ],
+      "files": [
+        {
+          "path": "registry/default/drawer/drawer.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/drawer.tsx"
+        }
+      ]
+    },
+    {
+      "name": "drop-zone",
+      "type": "registry:ui",
+      "title": "Drop Zone",
+      "description": "A drag-and-drop target area with a dashed border and an integrated file-picker trigger, built on React Aria DropZone and FileTrigger.",
+      "dependencies": [
+        "react-aria-components",
+        "@tabler/icons-react"
+      ],
+      "registryDependencies": [
+        "@racket-ui/cva",
+        "@racket-ui/button"
+      ],
+      "files": [
+        {
+          "path": "registry/default/drop-zone/drop-zone.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/drop-zone.tsx"
+        }
+      ]
+    },
+    {
+      "name": "dropdown-menu",
+      "type": "registry:ui",
+      "title": "Dropdown Menu",
+      "description": "Displays a menu of actions or options in a React Aria popover.",
+      "dependencies": [
+        "react-aria-components",
+        "@tabler/icons-react"
+      ],
+      "registryDependencies": [
+        "@racket-ui/cva"
+      ],
+      "files": [
+        {
+          "path": "registry/default/dropdown-menu/dropdown-menu.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/dropdown-menu.tsx"
+        }
+      ]
+    },
+    {
+      "name": "empty",
+      "type": "registry:ui",
+      "title": "Empty",
+      "description": "A flexible empty state layout for missing or unavailable content.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@racket-ui/cva"
+      ],
+      "files": [
+        {
+          "path": "registry/default/empty/empty.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/empty.tsx"
+        }
+      ]
+    },
+    {
+      "name": "field",
+      "type": "registry:ui",
+      "title": "Field",
+      "description": "Composable field primitives for labels, descriptions, errors, groups, and separators.",
+      "dependencies": [
+        "react-aria-components"
+      ],
+      "registryDependencies": [
+        "@racket-ui/cva"
+      ],
+      "files": [
+        {
+          "path": "registry/default/field/field.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/field.tsx"
+        }
+      ]
+    },
+    {
+      "name": "form",
+      "type": "registry:ui",
+      "title": "Form",
+      "description": "Shadcn-styled form primitives powered by @tanstack/react-form v1, providing FormItem, FormLabel, FormControl, FormDescription, and FormMessage with automatic error wiring.",
+      "dependencies": [
+        "@tanstack/react-form"
+      ],
+      "registryDependencies": [
+        "@racket-ui/cva",
+        "@racket-ui/label"
+      ],
+      "files": [
+        {
+          "path": "registry/default/form/form.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/form.tsx"
+        }
+      ]
+    },
+    {
+      "name": "hover-card",
+      "type": "registry:ui",
+      "title": "Hover Card",
+      "description": "A hover and focus activated popover for previewing contextual content.",
+      "dependencies": [
+        "react-aria-components"
+      ],
+      "registryDependencies": [
+        "@racket-ui/cva"
+      ],
+      "files": [
+        {
+          "path": "registry/default/hover-card/hover-card.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/hover-card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "input",
+      "type": "registry:ui",
+      "title": "Input",
+      "description": "A styled text input matching the shadcn API.",
+      "registryDependencies": [
+        "@racket-ui/cva"
+      ],
+      "files": [
+        {
+          "path": "registry/default/input/input.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/input.tsx"
+        }
+      ]
+    },
+    {
+      "name": "input-group",
+      "type": "registry:ui",
+      "title": "Input Group",
+      "description": "A static input group layout for composing controls, addons, text, and buttons.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@racket-ui/cva",
+        "@racket-ui/button",
+        "@racket-ui/input",
+        "@racket-ui/textarea"
+      ],
+      "files": [
+        {
+          "path": "registry/default/input-group/input-group.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/input-group.tsx"
+        }
+      ]
+    },
+    {
+      "name": "input-otp",
+      "type": "registry:ui",
+      "title": "Input OTP",
+      "description": "An accessible one-time password input built with a single hidden text input overlaid by styled slot boxes, with keyboard navigation and paste support.",
+      "dependencies": [
+        "@tabler/icons-react"
+      ],
+      "registryDependencies": [
+        "@racket-ui/cva"
+      ],
+      "files": [
+        {
+          "path": "registry/default/input-otp/input-otp.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/input-otp.tsx"
+        }
+      ]
+    },
+    {
+      "name": "item",
+      "type": "registry:ui",
+      "title": "Item",
+      "description": "A flexible static list item layout with media, content, actions, header, and footer sections.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@racket-ui/cva"
+      ],
+      "files": [
+        {
+          "path": "registry/default/item/item.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/item.tsx"
+        }
+      ]
+    },
+    {
+      "name": "kbd",
+      "type": "registry:ui",
+      "title": "Kbd",
+      "description": "A compact keyboard key indicator for shortcuts and command hints.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@racket-ui/cva"
+      ],
+      "files": [
+        {
+          "path": "registry/default/kbd/kbd.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/kbd.tsx"
+        }
+      ]
+    },
+    {
+      "name": "label",
+      "type": "registry:ui",
+      "title": "Label",
+      "description": "An accessible form label.",
+      "registryDependencies": [
+        "@racket-ui/cva"
+      ],
+      "files": [
+        {
+          "path": "registry/default/label/label.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/label.tsx"
+        }
+      ]
+    },
+    {
+      "name": "menubar",
+      "type": "registry:ui",
+      "title": "Menubar",
+      "description": "A horizontal application menu bar built with React Aria menu primitives.",
+      "dependencies": [
+        "react-aria-components",
+        "@tabler/icons-react"
+      ],
+      "registryDependencies": [
+        "@racket-ui/cva"
+      ],
+      "files": [
+        {
+          "path": "registry/default/menubar/menubar.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/menubar.tsx"
+        }
+      ]
+    },
+    {
+      "name": "native-select",
+      "type": "registry:ui",
+      "title": "Native Select",
+      "description": "A native select control styled to match the shadcn/ui trigger.",
+      "dependencies": [
+        "@tabler/icons-react"
+      ],
+      "registryDependencies": [
+        "@racket-ui/cva"
+      ],
+      "files": [
+        {
+          "path": "registry/default/native-select/native-select.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/native-select.tsx"
+        }
+      ]
+    },
+    {
+      "name": "navigation-menu",
+      "type": "registry:ui",
+      "title": "Navigation Menu",
+      "description": "A horizontal navigation bar with expandable dropdown panels, implemented with local React state and accessible ARIA attributes.",
+      "dependencies": [
+        "@tabler/icons-react"
+      ],
+      "registryDependencies": [
+        "@racket-ui/cva"
+      ],
+      "files": [
+        {
+          "path": "registry/default/navigation-menu/navigation-menu.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/navigation-menu.tsx"
+        }
+      ]
+    },
+    {
+      "name": "pagination",
+      "type": "registry:ui",
+      "title": "Pagination",
+      "description": "A shadcn-compatible pagination component for navigating paged content.",
+      "dependencies": [
+        "@tabler/icons-react"
+      ],
+      "registryDependencies": [
+        "@racket-ui/cva",
+        "@racket-ui/button"
+      ],
+      "files": [
+        {
+          "path": "registry/default/pagination/pagination.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/pagination.tsx"
+        }
+      ]
+    },
+    {
+      "name": "popover",
+      "type": "registry:ui",
+      "title": "Popover",
+      "description": "A floating panel anchored to a trigger, built on React Aria Popover.",
+      "dependencies": [
+        "react-aria-components"
+      ],
+      "registryDependencies": [
+        "@racket-ui/cva"
+      ],
+      "files": [
+        {
+          "path": "registry/default/popover/popover.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/popover.tsx"
+        }
+      ]
+    },
+    {
+      "name": "progress",
+      "type": "registry:ui",
+      "title": "Progress",
+      "description": "A progress indicator built on React Aria ProgressBar.",
+      "dependencies": [
+        "react-aria-components"
+      ],
+      "registryDependencies": [
+        "@racket-ui/cva"
+      ],
+      "files": [
+        {
+          "path": "registry/default/progress/progress.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/progress.tsx"
+        }
+      ]
+    },
+    {
+      "name": "radio-group",
+      "type": "registry:ui",
+      "title": "Radio Group",
+      "description": "A set of radio buttons built on React Aria RadioGroup.",
+      "dependencies": [
+        "react-aria-components"
+      ],
+      "registryDependencies": [
+        "@racket-ui/cva"
+      ],
+      "files": [
+        {
+          "path": "registry/default/radio-group/radio-group.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/radio-group.tsx"
+        }
+      ]
+    },
+    {
+      "name": "resizable",
+      "type": "registry:ui",
+      "title": "Resizable",
+      "description": "Accessible resizable panel groups and handles built on react-resizable-panels.",
+      "dependencies": [
+        "react-resizable-panels",
+        "@tabler/icons-react"
+      ],
+      "registryDependencies": [
+        "@racket-ui/cva"
+      ],
+      "files": [
+        {
+          "path": "registry/default/resizable/resizable.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/resizable.tsx"
+        }
+      ]
+    },
+    {
+      "name": "scroll-area",
+      "type": "registry:ui",
+      "title": "Scroll Area",
+      "description": "A styled scroll container with optional scrollbar that preserves shadcn's ScrollArea and ScrollBar exports using native overflow and Tailwind utilities.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@racket-ui/cva"
+      ],
+      "files": [
+        {
+          "path": "registry/default/scroll-area/scroll-area.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/scroll-area.tsx"
+        }
+      ]
+    },
+    {
+      "name": "select",
+      "type": "registry:ui",
+      "title": "Select",
+      "description": "A select menu built on React Aria Select, with shadcn's value-keyed API.",
+      "dependencies": [
+        "react-aria-components",
+        "@tabler/icons-react"
+      ],
+      "registryDependencies": [
+        "@racket-ui/cva"
+      ],
+      "files": [
+        {
+          "path": "registry/default/select/select.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/select.tsx"
+        }
+      ]
+    },
+    {
+      "name": "separator",
+      "type": "registry:ui",
+      "title": "Separator",
+      "description": "A visual or semantic divider, built on React Aria Separator.",
+      "dependencies": [
+        "react-aria-components"
+      ],
+      "registryDependencies": [
+        "@racket-ui/cva"
+      ],
+      "files": [
+        {
+          "path": "registry/default/separator/separator.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/separator.tsx"
+        }
+      ]
+    },
+    {
+      "name": "sheet",
+      "type": "registry:ui",
+      "title": "Sheet",
+      "description": "A modal edge panel built on React Aria overlay primitives.",
+      "dependencies": [
+        "react-aria-components",
+        "@tabler/icons-react"
+      ],
+      "registryDependencies": [
+        "@racket-ui/cva",
+        "@racket-ui/button"
+      ],
+      "files": [
+        {
+          "path": "registry/default/sheet/sheet.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/sheet.tsx"
+        }
+      ]
+    },
+    {
+      "name": "sidebar",
+      "type": "registry:ui",
+      "title": "Sidebar",
+      "description": "A composable sidebar with collapsible desktop panel, mobile Sheet overlay, keyboard shortcut, cookie persistence, and full shadcn export surface.",
+      "dependencies": [
+        "@tabler/icons-react"
+      ],
+      "registryDependencies": [
+        "@racket-ui/cva",
+        "@racket-ui/sheet",
+        "@racket-ui/button",
+        "@racket-ui/input",
+        "@racket-ui/separator",
+        "@racket-ui/tooltip",
+        "@racket-ui/skeleton"
+      ],
+      "files": [
+        {
+          "path": "registry/default/sidebar/sidebar.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/sidebar.tsx"
+        }
+      ]
+    },
+    {
+      "name": "skeleton",
+      "type": "registry:ui",
+      "title": "Skeleton",
+      "description": "A placeholder shimmer for loading states.",
+      "registryDependencies": [
+        "@racket-ui/cva"
+      ],
+      "files": [
+        {
+          "path": "registry/default/skeleton/skeleton.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/skeleton.tsx"
+        }
+      ]
+    },
+    {
+      "name": "slider",
+      "type": "registry:ui",
+      "title": "Slider",
+      "description": "A React Aria slider styled to match shadcn/ui.",
+      "dependencies": [
+        "react-aria-components"
+      ],
+      "registryDependencies": [
+        "@racket-ui/cva"
+      ],
+      "files": [
+        {
+          "path": "registry/default/slider/slider.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/slider.tsx"
+        }
+      ]
+    },
+    {
+      "name": "sonner",
+      "type": "registry:ui",
+      "title": "Sonner",
+      "description": "A toast notification component built on React Aria's UNSTABLE_ToastRegion primitives with per-variant icons and a `toast` helper API.",
+      "dependencies": [
+        "react-aria-components",
+        "@tabler/icons-react"
+      ],
+      "registryDependencies": [
+        "@racket-ui/cva"
+      ],
+      "files": [
+        {
+          "path": "registry/default/sonner/sonner.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/sonner.tsx"
+        }
+      ]
+    },
+    {
+      "name": "spinner",
+      "type": "registry:ui",
+      "title": "Spinner",
+      "description": "An animated loading indicator using a Tabler icon.",
+      "dependencies": [
+        "@tabler/icons-react"
+      ],
+      "registryDependencies": [
+        "@racket-ui/cva"
+      ],
+      "files": [
+        {
+          "path": "registry/default/spinner/spinner.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/spinner.tsx"
+        }
+      ]
+    },
+    {
+      "name": "switch",
+      "type": "registry:ui",
+      "title": "Switch",
+      "description": "A toggle switch built on React Aria Switch.",
+      "dependencies": [
+        "react-aria-components"
+      ],
+      "registryDependencies": [
+        "@racket-ui/cva"
+      ],
+      "files": [
+        {
+          "path": "registry/default/switch/switch.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/switch.tsx"
+        }
+      ]
+    },
+    {
+      "name": "table",
+      "type": "registry:ui",
+      "title": "Table",
+      "description": "A responsive table primitive with header, body, footer, row, cell, and caption parts.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@racket-ui/cva"
+      ],
+      "files": [
+        {
+          "path": "registry/default/table/table.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/table.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tabs",
+      "type": "registry:ui",
+      "title": "Tabs",
+      "description": "Tabbed interface built on React Aria Tabs, with shadcn's value-keyed API.",
+      "dependencies": [
+        "react-aria-components"
+      ],
+      "registryDependencies": [
+        "@racket-ui/cva"
+      ],
+      "files": [
+        {
+          "path": "registry/default/tabs/tabs.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/tabs.tsx"
+        }
+      ]
+    },
+    {
+      "name": "textarea",
+      "type": "registry:ui",
+      "title": "Textarea",
+      "description": "A styled multi-line text input.",
+      "registryDependencies": [
+        "@racket-ui/cva"
+      ],
+      "files": [
+        {
+          "path": "registry/default/textarea/textarea.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/textarea.tsx"
+        }
+      ]
+    },
+    {
+      "name": "time-field",
+      "type": "registry:ui",
+      "title": "Time Field",
+      "description": "A keyboard-driven time input built on React Aria's TimeField with individually editable hour, minute, second, and period segments.",
+      "dependencies": [
+        "react-aria-components",
+        "@internationalized/date"
+      ],
+      "registryDependencies": [
+        "@racket-ui/cva"
+      ],
+      "files": [
+        {
+          "path": "registry/default/time-field/time-field.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/time-field.tsx"
+        }
+      ]
+    },
+    {
+      "name": "toggle",
+      "type": "registry:ui",
+      "title": "Toggle",
+      "description": "A two-state button that can be pressed or unpressed.",
+      "dependencies": [
+        "react-aria-components"
+      ],
+      "registryDependencies": [
+        "@racket-ui/cva"
+      ],
+      "files": [
+        {
+          "path": "registry/default/toggle/toggle.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/toggle.tsx"
+        }
+      ]
+    },
+    {
+      "name": "toggle-group",
+      "type": "registry:ui",
+      "title": "Toggle Group",
+      "description": "A set of two-state buttons that can be toggled independently or as a single-choice group.",
+      "dependencies": [
+        "react-aria-components"
+      ],
+      "registryDependencies": [
+        "@racket-ui/cva",
+        "@racket-ui/toggle"
+      ],
+      "files": [
+        {
+          "path": "registry/default/toggle-group/toggle-group.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/toggle-group.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tooltip",
+      "type": "registry:ui",
+      "title": "Tooltip",
+      "description": "A contextual hint built on React Aria Tooltip.",
+      "dependencies": [
+        "react-aria-components"
+      ],
+      "registryDependencies": [
+        "@racket-ui/cva"
+      ],
+      "files": [
+        {
+          "path": "registry/default/tooltip/tooltip.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/tooltip.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tree",
+      "type": "registry:ui",
+      "title": "Tree",
+      "description": "A hierarchical tree component with keyboard navigation, expand/collapse chevrons, selection, and optional leading icons, built on React Aria.",
+      "dependencies": [
+        "react-aria-components",
+        "@tabler/icons-react"
+      ],
+      "registryDependencies": [
+        "@racket-ui/cva"
+      ],
+      "files": [
+        {
+          "path": "registry/default/tree/tree.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/tree.tsx"
+        }
+      ]
+    }
+  ]
+}
