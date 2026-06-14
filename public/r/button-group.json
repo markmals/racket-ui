@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-group",
+  "title": "Button Group",
+  "description": "A static button grouping layout with shadcn-compatible orientation variants.",
+  "dependencies": [],
+  "registryDependencies": [
+    "@racket-ui/cva"
+  ],
+  "files": [
+    {
+      "path": "registry/default/button-group/button-group.tsx",
+      "content": "// Classification: A — static component (cva only). React Aria has no Slot, so\n// `asChild` is dropped.\n\nimport type { ComponentProps } from \"react\";\n\nimport { cva, cx, type VariantProps } from \"@/lib/cva\";\n\nlet buttonGroupVariants = cva({\n    base: \"flex w-fit items-stretch has-[>[data-slot=button-group]]:gap-2 [&>*]:focus-visible:relative [&>*]:focus-visible:z-10 has-[select[aria-hidden=true]:last-child]:[&>[data-slot=select-trigger]:last-of-type]:rounded-r-md [&>[data-slot=select-trigger]:not([class*='w-'])]:w-fit [&>input]:flex-1\",\n    variants: {\n        orientation: {\n            horizontal:\n                \"[&>*:not(:first-child)]:rounded-l-none [&>*:not(:first-child)]:border-l-0 [&>*:not(:last-child)]:rounded-r-none\",\n            vertical:\n                \"flex-col [&>*:not(:first-child)]:rounded-t-none [&>*:not(:first-child)]:border-t-0 [&>*:not(:last-child)]:rounded-b-none\",\n        },\n    },\n    defaultVariants: {\n        orientation: \"horizontal\",\n    },\n});\n\nexport interface ButtonGroupProps\n    extends ComponentProps<\"div\">, VariantProps<typeof buttonGroupVariants> {}\n\nfunction ButtonGroup({ className, orientation, ...props }: ButtonGroupProps) {\n    return (\n        <div\n            className={buttonGroupVariants({ orientation, className })}\n            data-orientation={orientation}\n            data-slot=\"button-group\"\n            role=\"group\"\n            {...props}\n        />\n    );\n}\n\nfunction ButtonGroupText({ className, ...props }: ComponentProps<\"div\">) {\n    return (\n        <div\n            className={cx(\n                \"flex items-center gap-2 rounded-md border bg-muted px-4 text-sm font-medium shadow-xs [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4\",\n                className,\n            )}\n            data-slot=\"button-group-text\"\n            {...props}\n        />\n    );\n}\n\nexport interface ButtonGroupSeparatorProps extends ComponentProps<\"div\"> {\n    orientation?: \"horizontal\" | \"vertical\";\n}\n\nfunction ButtonGroupSeparator({\n    className,\n    orientation = \"vertical\",\n    ...props\n}: ButtonGroupSeparatorProps) {\n    return (\n        <div\n            aria-orientation={orientation}\n            className={cx(\n                \"relative m-0! self-stretch bg-input data-[orientation=vertical]:h-auto\",\n                orientation === \"vertical\" ? \"w-px\" : \"h-px w-full\",\n                className,\n            )}\n            data-orientation={orientation}\n            data-slot=\"button-group-separator\"\n            role=\"separator\"\n            {...props}\n        />\n    );\n}\n\nexport { ButtonGroup, ButtonGroupSeparator, ButtonGroupText, buttonGroupVariants };\n",
+      "type": "registry:ui",
+      "target": "components/ui/button-group.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

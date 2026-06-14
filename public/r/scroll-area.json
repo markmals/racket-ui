@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "scroll-area",
+  "title": "Scroll Area",
+  "description": "A styled scroll container with optional scrollbar that preserves shadcn's ScrollArea and ScrollBar exports using native overflow and Tailwind utilities.",
+  "dependencies": [],
+  "registryDependencies": [
+    "@racket-ui/cva"
+  ],
+  "files": [
+    {
+      "path": "registry/default/scroll-area/scroll-area.tsx",
+      "content": "// Classification: C — local styled scroll container. Radix ScrollArea has no\n// React Aria equivalent; implemented as a native overflow container with Tailwind\n// scrollbar utilities. Preserves shadcn export names, data-slots, and visuals.\n\n\"use client\";\n\nimport type { ComponentProps } from \"react\";\n\nimport { cx } from \"@/lib/cva\";\n\nfunction ScrollArea({ className, children, ...props }: ComponentProps<\"div\">) {\n    return (\n        <div className={cx(\"relative overflow-auto\", className)} data-slot=\"scroll-area\" {...props}>\n            <div\n                className=\"size-full rounded-[inherit] transition-[color,box-shadow] outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:outline-1\"\n                data-slot=\"scroll-area-viewport\"\n                tabIndex={0}\n            >\n                {children}\n            </div>\n        </div>\n    );\n}\n\ntype ScrollBarOrientation = \"vertical\" | \"horizontal\";\n\ninterface ScrollBarProps extends ComponentProps<\"div\"> {\n    orientation?: ScrollBarOrientation;\n}\n\nfunction ScrollBar({ className, orientation = \"vertical\", ...props }: ScrollBarProps) {\n    return (\n        <div\n            className={cx(\n                \"flex touch-none p-px transition-colors select-none\",\n                orientation === \"vertical\" && \"h-full w-2.5 border-l border-l-transparent\",\n                orientation === \"horizontal\" && \"h-2.5 flex-col border-t border-t-transparent\",\n                className,\n            )}\n            data-orientation={orientation}\n            data-slot=\"scroll-area-scrollbar\"\n            {...props}\n        >\n            <div className=\"relative flex-1 rounded-full bg-border\" data-slot=\"scroll-area-thumb\" />\n        </div>\n    );\n}\n\nexport { ScrollArea, ScrollBar };\n",
+      "type": "registry:ui",
+      "target": "components/ui/scroll-area.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

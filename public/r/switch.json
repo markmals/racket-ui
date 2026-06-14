@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "switch",
+  "title": "Switch",
+  "description": "A toggle switch built on React Aria Switch.",
+  "dependencies": [
+    "react-aria-components"
+  ],
+  "registryDependencies": [
+    "@racket-ui/cva"
+  ],
+  "files": [
+    {
+      "path": "registry/default/switch/switch.tsx",
+      "content": "\"use client\";\n\n// Classification: A — direct React Aria Components replacement (RAC Switch).\n// Compat note: use RAC props — `isSelected`/`defaultSelected`/`onChange`\n// (not shadcn's `checked`/`onCheckedChange`). See COMPATIBILITY.md.\n\nimport {\n    Switch as AriaSwitch,\n    type SwitchProps as AriaSwitchProps,\n    composeRenderProps,\n} from \"react-aria-components\";\n\nimport { cva, type VariantProps } from \"@/lib/cva\";\n\nlet switchVariants = cva({\n    base: [\n        \"group peer inline-flex shrink-0 items-center rounded-full border border-transparent shadow-xs transition-all outline-none\",\n        \"data-[focus-visible]:border-ring data-[focus-visible]:ring-[3px] data-[focus-visible]:ring-ring/50\",\n        \"data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50\",\n        \"bg-input data-[selected]:bg-primary dark:bg-input/80 dark:data-[selected]:bg-primary\",\n    ],\n    variants: {\n        size: {\n            default: \"h-[1.15rem] w-8\",\n            sm: \"h-3.5 w-6\",\n        },\n    },\n    defaultVariants: {\n        size: \"default\",\n    },\n});\n\nlet switchThumbVariants = cva({\n    base: [\n        \"pointer-events-none block rounded-full bg-background ring-0 transition-transform\",\n        \"translate-x-0 group-data-[selected]:translate-x-[calc(100%-2px)]\",\n        \"dark:bg-foreground dark:group-data-[selected]:bg-primary-foreground\",\n    ],\n    variants: {\n        size: {\n            default: \"size-4\",\n            sm: \"size-3\",\n        },\n    },\n    defaultVariants: {\n        size: \"default\",\n    },\n});\n\nexport interface SwitchProps extends AriaSwitchProps, VariantProps<typeof switchVariants> {}\n\nfunction Switch({ className, size, ...props }: SwitchProps) {\n    return (\n        <AriaSwitch\n            className={composeRenderProps(className, className =>\n                switchVariants({ size, className }),\n            )}\n            data-size={size}\n            data-slot=\"switch\"\n            {...props}\n        >\n            <span className={switchThumbVariants({ size })} data-slot=\"switch-thumb\" />\n        </AriaSwitch>\n    );\n}\n\nexport { Switch };\n",
+      "type": "registry:ui",
+      "target": "components/ui/switch.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

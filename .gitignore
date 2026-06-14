@@ -4,8 +4,9 @@ dist
 *.local
 .vite
 
-# Generated registry distribution artifacts
-public/r
+# The per-item registry distribution (public/r/*.json, built by `mise run
+# registry:build`) IS committed so shadcn can resolve namespaced
+# registryDependencies (@racket-ui/*) over GitHub raw — see README.
 
 # Generated from registry/default canonical source via `mise run registry:sync`
 /lib/cva.ts

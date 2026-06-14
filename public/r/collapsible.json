@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "collapsible",
+  "title": "Collapsible",
+  "description": "An interactive disclosure primitive for showing and hiding content.",
+  "dependencies": [
+    "react-aria-components"
+  ],
+  "registryDependencies": [
+    "@racket-ui/cva"
+  ],
+  "files": [
+    {
+      "path": "registry/default/collapsible/collapsible.tsx",
+      "content": "\"use client\";\n\n// Classification: A - direct React Aria Disclosure / Button /\n// DisclosurePanel replacement for shadcn's Radix Collapsible primitives.\n\nimport {\n    Button as AriaButton,\n    type ButtonProps as AriaButtonProps,\n    Disclosure as AriaDisclosure,\n    DisclosurePanel as AriaDisclosurePanel,\n    type DisclosurePanelProps as AriaDisclosurePanelProps,\n    type DisclosureProps as AriaDisclosureProps,\n    composeRenderProps,\n} from \"react-aria-components\";\n\nimport { cx } from \"@/lib/cva\";\n\nfunction Collapsible({ className, ...props }: AriaDisclosureProps) {\n    return (\n        <AriaDisclosure\n            className={composeRenderProps(className, className => cx(className))}\n            data-slot=\"collapsible\"\n            {...props}\n        />\n    );\n}\n\nfunction CollapsibleTrigger({ className, ...props }: AriaButtonProps) {\n    return (\n        <AriaButton\n            className={composeRenderProps(className, className => cx(className))}\n            data-slot=\"collapsible-trigger\"\n            slot=\"trigger\"\n            {...props}\n        />\n    );\n}\n\nfunction CollapsibleContent({ className, ...props }: AriaDisclosurePanelProps) {\n    return (\n        <AriaDisclosurePanel\n            className={composeRenderProps(className, className => cx(className))}\n            data-slot=\"collapsible-content\"\n            {...props}\n        />\n    );\n}\n\nexport { Collapsible, CollapsibleTrigger, CollapsibleContent };\n",
+      "type": "registry:ui",
+      "target": "components/ui/collapsible.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

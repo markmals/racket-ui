@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "checkbox",
+  "title": "Checkbox",
+  "description": "A checkbox built on React Aria Checkbox with Tabler indicators.",
+  "dependencies": [
+    "react-aria-components",
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@racket-ui/cva"
+  ],
+  "files": [
+    {
+      "path": "registry/default/checkbox/checkbox.tsx",
+      "content": "\"use client\";\n\n// Classification: A — direct React Aria Components replacement (RAC Checkbox).\n// Compat note: use RAC props — `isSelected`/`defaultSelected`/`onChange`\n// (not shadcn's `checked`/`onCheckedChange`). See COMPATIBILITY.md.\n\nimport { IconCheck, IconMinus } from \"@tabler/icons-react\";\nimport {\n    Checkbox as AriaCheckbox,\n    type CheckboxProps as AriaCheckboxProps,\n    composeRenderProps,\n} from \"react-aria-components\";\n\nimport { cva } from \"@/lib/cva\";\n\nlet checkboxVariants = cva({\n    base: [\n        \"peer inline-grid size-4 shrink-0 place-content-center rounded-[4px] border border-input text-current shadow-xs transition-shadow outline-none\",\n        \"data-[focus-visible]:border-ring data-[focus-visible]:ring-[3px] data-[focus-visible]:ring-ring/50\",\n        \"data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50\",\n        \"data-[invalid]:border-destructive data-[invalid]:ring-destructive/20 dark:data-[invalid]:ring-destructive/40\",\n        \"data-[selected]:border-primary data-[selected]:bg-primary data-[selected]:text-primary-foreground\",\n        \"data-[indeterminate]:border-primary data-[indeterminate]:bg-primary data-[indeterminate]:text-primary-foreground\",\n        \"dark:bg-input/30 dark:data-[selected]:bg-primary\",\n    ],\n});\n\nfunction Checkbox({ className, ...props }: AriaCheckboxProps) {\n    return (\n        <AriaCheckbox\n            className={composeRenderProps(className, className => checkboxVariants({ className }))}\n            data-slot=\"checkbox\"\n            {...props}\n        >\n            {({ isSelected, isIndeterminate }) => (\n                <span\n                    className=\"grid place-content-center text-current\"\n                    data-slot=\"checkbox-indicator\"\n                >\n                    {isIndeterminate ? (\n                        <IconMinus className=\"size-3.5\" />\n                    ) : isSelected ? (\n                        <IconCheck className=\"size-3.5\" />\n                    ) : null}\n                </span>\n            )}\n        </AriaCheckbox>\n    );\n}\n\nexport { Checkbox };\n",
+      "type": "registry:ui",
+      "target": "components/ui/checkbox.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

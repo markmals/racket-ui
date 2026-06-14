@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cva",
+  "title": "CVA",
+  "description": "Configured cva@beta helpers (cva, cx, compose) wired to tailwind-merge. Replaces the classic shadcn cn helper.",
+  "dependencies": [
+    "cva@beta",
+    "tailwind-merge"
+  ],
+  "files": [
+    {
+      "path": "registry/default/lib/cva.ts",
+      "content": "import { defineConfig } from \"cva\";\nimport { twMerge } from \"tailwind-merge\";\n\n/**\n * Configured `cva` helpers for the racket-ui registry.\n *\n * Every generated class string is passed through `tailwind-merge` via the\n * `onComplete` hook so later utility classes win over earlier conflicting ones\n * (the role the classic shadcn `cn` helper played). Components import from\n * `@/lib/cva` and never from `\"cva\"` directly.\n */\nexport const { cva, cx, compose } = defineConfig({\n    hooks: {\n        onComplete: className => twMerge(className),\n    },\n});\n\nexport type { VariantProps } from \"cva\";\n",
+      "type": "registry:lib",
+      "target": "lib/cva.ts"
+    }
+  ],
+  "type": "registry:lib"
+}

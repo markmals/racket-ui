@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "radio-group",
+  "title": "Radio Group",
+  "description": "A set of radio buttons built on React Aria RadioGroup.",
+  "dependencies": [
+    "react-aria-components"
+  ],
+  "registryDependencies": [
+    "@racket-ui/cva"
+  ],
+  "files": [
+    {
+      "path": "registry/default/radio-group/radio-group.tsx",
+      "content": "\"use client\";\n\n// Classification: A — direct React Aria Components replacement (RAC RadioGroup\n// + Radio). Compat notes: RadioGroup uses `value`/`onChange` (not\n// `onValueChange`). RadioGroupItem is a RAC `Radio`, so its label goes *inside*\n// the item (`<RadioGroupItem value=\"a\">Option A</RadioGroupItem>`) rather than a\n// separate `htmlFor` Label. See COMPATIBILITY.md.\n\nimport {\n    Radio as AriaRadio,\n    type RadioProps as AriaRadioProps,\n    RadioGroup as AriaRadioGroup,\n    type RadioGroupProps as AriaRadioGroupProps,\n    composeRenderProps,\n} from \"react-aria-components\";\n\nimport { cva, cx } from \"@/lib/cva\";\n\nfunction RadioGroup({ className, ...props }: AriaRadioGroupProps) {\n    return (\n        <AriaRadioGroup\n            className={composeRenderProps(className, className =>\n                cx(\n                    \"grid gap-3 data-[orientation=horizontal]:flex data-[orientation=horizontal]:items-center data-[orientation=horizontal]:gap-3\",\n                    className,\n                ),\n            )}\n            data-slot=\"radio-group\"\n            {...props}\n        />\n    );\n}\n\nlet radioControlVariants = cva({\n    base: [\n        \"flex aspect-square size-4 shrink-0 items-center justify-center rounded-full border border-input text-primary shadow-xs transition-[color,box-shadow] outline-none\",\n        \"group-data-[focus-visible]:border-ring group-data-[focus-visible]:ring-[3px] group-data-[focus-visible]:ring-ring/50\",\n        \"group-data-[invalid]:border-destructive group-data-[invalid]:ring-destructive/20 dark:group-data-[invalid]:ring-destructive/40\",\n        \"dark:bg-input/30\",\n    ],\n});\n\nfunction RadioGroupItem({ className, children, ...props }: AriaRadioProps) {\n    return (\n        <AriaRadio\n            className={composeRenderProps(className, className =>\n                cx(\n                    \"group flex items-center gap-2 text-sm leading-none font-medium data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50\",\n                    className,\n                ),\n            )}\n            data-slot=\"radio-group-item\"\n            {...props}\n        >\n            {composeRenderProps(children, (children, { isSelected }) => (\n                <>\n                    <span className={radioControlVariants()} data-slot=\"radio-group-control\">\n                        {isSelected && (\n                            <span\n                                className=\"size-2 rounded-full bg-primary\"\n                                data-slot=\"radio-group-indicator\"\n                            />\n                        )}\n                    </span>\n                    {children}\n                </>\n            ))}\n        </AriaRadio>\n    );\n}\n\nexport { RadioGroup, RadioGroupItem };\n",
+      "type": "registry:ui",
+      "target": "components/ui/radio-group.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}
