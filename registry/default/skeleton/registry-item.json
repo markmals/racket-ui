@@ -1,0 +1,15 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+    "name": "skeleton",
+    "type": "registry:ui",
+    "title": "Skeleton",
+    "description": "A placeholder shimmer for loading states.",
+    "registryDependencies": ["@racket-ui/cva"],
+    "files": [
+        {
+            "path": "registry/default/skeleton/skeleton.tsx",
+            "type": "registry:ui",
+            "target": "components/ui/skeleton.tsx"
+        }
+    ]
+}

@@ -1,0 +1,16 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+    "name": "date-range-picker",
+    "type": "registry:ui",
+    "title": "Date Range Picker",
+    "description": "A date range picker combining two editable date inputs and a range calendar popover, built on React Aria Components.",
+    "dependencies": ["react-aria-components", "@tabler/icons-react", "@internationalized/date"],
+    "registryDependencies": ["@racket-ui/cva", "@racket-ui/button", "@racket-ui/calendar"],
+    "files": [
+        {
+            "path": "registry/default/date-range-picker/date-range-picker.tsx",
+            "type": "registry:ui",
+            "target": "components/ui/date-range-picker.tsx"
+        }
+    ]
+}

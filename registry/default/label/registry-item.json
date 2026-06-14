@@ -1,0 +1,15 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+    "name": "label",
+    "type": "registry:ui",
+    "title": "Label",
+    "description": "An accessible form label.",
+    "registryDependencies": ["@racket-ui/cva"],
+    "files": [
+        {
+            "path": "registry/default/label/label.tsx",
+            "type": "registry:ui",
+            "target": "components/ui/label.tsx"
+        }
+    ]
+}

@@ -1,0 +1,16 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+    "name": "tooltip",
+    "type": "registry:ui",
+    "title": "Tooltip",
+    "description": "A contextual hint built on React Aria Tooltip.",
+    "dependencies": ["react-aria-components"],
+    "registryDependencies": ["@racket-ui/cva"],
+    "files": [
+        {
+            "path": "registry/default/tooltip/tooltip.tsx",
+            "type": "registry:ui",
+            "target": "components/ui/tooltip.tsx"
+        }
+    ]
+}

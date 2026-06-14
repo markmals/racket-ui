@@ -1,0 +1,16 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+    "name": "empty",
+    "type": "registry:ui",
+    "title": "Empty",
+    "description": "A flexible empty state layout for missing or unavailable content.",
+    "dependencies": [],
+    "registryDependencies": ["@racket-ui/cva"],
+    "files": [
+        {
+            "path": "registry/default/empty/empty.tsx",
+            "type": "registry:ui",
+            "target": "components/ui/empty.tsx"
+        }
+    ]
+}

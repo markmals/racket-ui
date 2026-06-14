@@ -1,0 +1,15 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+    "name": "alert",
+    "type": "registry:ui",
+    "title": "Alert",
+    "description": "A callout for user attention, with default and destructive variants.",
+    "registryDependencies": ["@racket-ui/cva"],
+    "files": [
+        {
+            "path": "registry/default/alert/alert.tsx",
+            "type": "registry:ui",
+            "target": "components/ui/alert.tsx"
+        }
+    ]
+}

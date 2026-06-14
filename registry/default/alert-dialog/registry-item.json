@@ -1,0 +1,16 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+    "name": "alert-dialog",
+    "type": "registry:ui",
+    "title": "Alert Dialog",
+    "description": "A modal dialog that interrupts the user with important content and requires a response.",
+    "dependencies": ["react-aria-components"],
+    "registryDependencies": ["@racket-ui/cva", "@racket-ui/button"],
+    "files": [
+        {
+            "path": "registry/default/alert-dialog/alert-dialog.tsx",
+            "type": "registry:ui",
+            "target": "components/ui/alert-dialog.tsx"
+        }
+    ]
+}

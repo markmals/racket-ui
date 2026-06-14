@@ -1,0 +1,16 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+    "name": "time-field",
+    "type": "registry:ui",
+    "title": "Time Field",
+    "description": "A keyboard-driven time input built on React Aria's TimeField with individually editable hour, minute, second, and period segments.",
+    "dependencies": ["react-aria-components", "@internationalized/date"],
+    "registryDependencies": ["@racket-ui/cva"],
+    "files": [
+        {
+            "path": "registry/default/time-field/time-field.tsx",
+            "type": "registry:ui",
+            "target": "components/ui/time-field.tsx"
+        }
+    ]
+}

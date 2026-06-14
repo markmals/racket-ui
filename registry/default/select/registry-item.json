@@ -1,0 +1,16 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+    "name": "select",
+    "type": "registry:ui",
+    "title": "Select",
+    "description": "A select menu built on React Aria Select, with shadcn's value-keyed API.",
+    "dependencies": ["react-aria-components", "@tabler/icons-react"],
+    "registryDependencies": ["@racket-ui/cva"],
+    "files": [
+        {
+            "path": "registry/default/select/select.tsx",
+            "type": "registry:ui",
+            "target": "components/ui/select.tsx"
+        }
+    ]
+}

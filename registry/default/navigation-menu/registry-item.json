@@ -1,0 +1,16 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+    "name": "navigation-menu",
+    "type": "registry:ui",
+    "title": "Navigation Menu",
+    "description": "A horizontal navigation bar with expandable dropdown panels, implemented with local React state and accessible ARIA attributes.",
+    "dependencies": ["@tabler/icons-react"],
+    "registryDependencies": ["@racket-ui/cva"],
+    "files": [
+        {
+            "path": "registry/default/navigation-menu/navigation-menu.tsx",
+            "type": "registry:ui",
+            "target": "components/ui/navigation-menu.tsx"
+        }
+    ]
+}

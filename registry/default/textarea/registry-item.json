@@ -1,0 +1,15 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+    "name": "textarea",
+    "type": "registry:ui",
+    "title": "Textarea",
+    "description": "A styled multi-line text input.",
+    "registryDependencies": ["@racket-ui/cva"],
+    "files": [
+        {
+            "path": "registry/default/textarea/textarea.tsx",
+            "type": "registry:ui",
+            "target": "components/ui/textarea.tsx"
+        }
+    ]
+}

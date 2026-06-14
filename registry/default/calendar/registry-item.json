@@ -1,0 +1,16 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+    "name": "calendar",
+    "type": "registry:ui",
+    "title": "Calendar",
+    "description": "A date picker calendar built with React Aria Components.",
+    "dependencies": ["react-aria-components", "@tabler/icons-react"],
+    "registryDependencies": ["@racket-ui/cva", "@racket-ui/button"],
+    "files": [
+        {
+            "path": "registry/default/calendar/calendar.tsx",
+            "type": "registry:ui",
+            "target": "components/ui/calendar.tsx"
+        }
+    ]
+}

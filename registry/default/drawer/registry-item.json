@@ -1,0 +1,16 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+    "name": "drawer",
+    "type": "registry:ui",
+    "title": "Drawer",
+    "description": "A drag-to-dismiss drawer built on vaul with direction support and shadcn-compatible exports.",
+    "dependencies": ["vaul"],
+    "registryDependencies": ["@racket-ui/cva"],
+    "files": [
+        {
+            "path": "registry/default/drawer/drawer.tsx",
+            "type": "registry:ui",
+            "target": "components/ui/drawer.tsx"
+        }
+    ]
+}

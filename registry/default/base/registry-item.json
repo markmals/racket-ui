@@ -1,0 +1,19 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+    "name": "base",
+    "type": "registry:style",
+    "extends": "none",
+    "title": "Base",
+    "description": "Base Tailwind v4 styles, design tokens, core dependencies, and the configured cva helper for the React Aria shadcn-compatible registry.",
+    "dependencies": ["@tabler/icons-react", "cva@beta", "react-aria-components", "tailwind-merge"],
+    "devDependencies": ["tw-animate-css"],
+    "registryDependencies": ["@racket-ui/cva"],
+    "files": [
+        {
+            "path": "registry/default/base/globals.css",
+            "type": "registry:file",
+            "target": "app/globals.css"
+        }
+    ],
+    "cssVars": {}
+}

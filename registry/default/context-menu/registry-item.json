@@ -1,0 +1,16 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+    "name": "context-menu",
+    "type": "registry:ui",
+    "title": "Context Menu",
+    "description": "Displays a right-click menu of actions using a local React Aria Menu and Popover positioned at the cursor.",
+    "dependencies": ["react-aria-components", "@tabler/icons-react"],
+    "registryDependencies": ["@racket-ui/cva"],
+    "files": [
+        {
+            "path": "registry/default/context-menu/context-menu.tsx",
+            "type": "registry:ui",
+            "target": "components/ui/context-menu.tsx"
+        }
+    ]
+}

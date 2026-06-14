@@ -1,0 +1,16 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+    "name": "item",
+    "type": "registry:ui",
+    "title": "Item",
+    "description": "A flexible static list item layout with media, content, actions, header, and footer sections.",
+    "dependencies": [],
+    "registryDependencies": ["@racket-ui/cva"],
+    "files": [
+        {
+            "path": "registry/default/item/item.tsx",
+            "type": "registry:ui",
+            "target": "components/ui/item.tsx"
+        }
+    ]
+}

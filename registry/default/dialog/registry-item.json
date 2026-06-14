@@ -1,0 +1,16 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+    "name": "dialog",
+    "type": "registry:ui",
+    "title": "Dialog",
+    "description": "A modal dialog built on React Aria's overlay primitives.",
+    "dependencies": ["react-aria-components", "@tabler/icons-react"],
+    "registryDependencies": ["@racket-ui/cva", "@racket-ui/button"],
+    "files": [
+        {
+            "path": "registry/default/dialog/dialog.tsx",
+            "type": "registry:ui",
+            "target": "components/ui/dialog.tsx"
+        }
+    ]
+}

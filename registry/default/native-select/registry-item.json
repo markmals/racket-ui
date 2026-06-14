@@ -1,0 +1,16 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+    "name": "native-select",
+    "type": "registry:ui",
+    "title": "Native Select",
+    "description": "A native select control styled to match the shadcn/ui trigger.",
+    "dependencies": ["@tabler/icons-react"],
+    "registryDependencies": ["@racket-ui/cva"],
+    "files": [
+        {
+            "path": "registry/default/native-select/native-select.tsx",
+            "type": "registry:ui",
+            "target": "components/ui/native-select.tsx"
+        }
+    ]
+}

@@ -1,0 +1,16 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+    "name": "command",
+    "type": "registry:ui",
+    "title": "Command",
+    "description": "A command palette component built on React Aria Autocomplete and Menu, providing keyboard-driven search and navigation over a filterable list of actions.",
+    "dependencies": ["react-aria-components", "@tabler/icons-react"],
+    "registryDependencies": ["@racket-ui/cva", "@racket-ui/dialog"],
+    "files": [
+        {
+            "path": "registry/default/command/command.tsx",
+            "type": "registry:ui",
+            "target": "components/ui/command.tsx"
+        }
+    ]
+}

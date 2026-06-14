@@ -1,0 +1,75 @@
+[tools]
+node = "24"
+pnpm = "11"
+
+[env]
+# Make npm-installed binaries (vite, tsgo, shadcn, vitest) available without `npx`.
+_.path = ['{{config_root}}/node_modules/.bin']
+NODE_ENV = "{{ env.NODE_ENV | default(value='development') }}"
+
+# --- demo / showcase app ---
+[tasks.dev]
+alias = "d"
+description = "Run the demo app"
+run = "vite dev"
+
+[tasks.build]
+alias = "b"
+description = "Build the demo app"
+run = "vite build"
+
+[tasks.preview]
+description = "Preview the demo app production build"
+depends = ["build"]
+run = "vite preview"
+
+# --- quality gates ---
+[tasks.fmt]
+description = "Format the whole repo"
+run = "oxfmt"
+
+[tasks.lint]
+description = "Lint the whole repo"
+run = "oxlint --fix"
+
+[tasks.typecheck]
+description = "Typecheck the whole repo"
+depends = ["registry:sync"]
+run = "tsgo"
+
+[tasks.test]
+alias = "t"
+description = "Run the test suite"
+depends = ["registry:sync"]
+run = "vitest run"
+
+[tasks.check]
+description = "Run all the quality gates"
+depends = ["typecheck", "test"]
+run = ["oxlint", "oxfmt --check"]
+
+# --- registry ---
+[tasks."registry:sync"]
+description = "Sync registry/default -> components/ui, lib, app/globals.css"
+sources = ["registry/default/**/*", "scripts/build-registry.ts"]
+outputs = ["registry.json", "lib/cva.ts", "app/globals.css", "components/ui/*.tsx"]
+run = "node scripts/build-registry.ts --sync-only"
+
+[tasks."registry:build"]
+alias = "rb"
+description = "Sync + official `shadcn build` -> public/r/*.json"
+run = "node scripts/build-registry.ts"
+
+[tasks."registry:validate"]
+description = "Sync then validate the registry via `shadcn build`"
+run = "node scripts/build-registry.ts --sync-only && shadcn build --output public/r"
+
+[tasks.info]
+description = "Print project + toolchain info"
+run = '''
+echo "Project:  racket-ui"
+echo "Node:     $(node --version)"
+echo "pnpm:     $(pnpm --version)"
+echo "NODE_ENV: $NODE_ENV"
+echo "Built:    $(ls public/r/*.json 2>/dev/null | grep -v registry.json | wc -l | tr -d ' ') registry items"
+'''

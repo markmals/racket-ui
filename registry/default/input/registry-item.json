@@ -1,0 +1,15 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+    "name": "input",
+    "type": "registry:ui",
+    "title": "Input",
+    "description": "A styled text input matching the shadcn API.",
+    "registryDependencies": ["@racket-ui/cva"],
+    "files": [
+        {
+            "path": "registry/default/input/input.tsx",
+            "type": "registry:ui",
+            "target": "components/ui/input.tsx"
+        }
+    ]
+}

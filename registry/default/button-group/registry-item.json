@@ -1,0 +1,16 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+    "name": "button-group",
+    "type": "registry:ui",
+    "title": "Button Group",
+    "description": "A static button grouping layout with shadcn-compatible orientation variants.",
+    "dependencies": [],
+    "registryDependencies": ["@racket-ui/cva"],
+    "files": [
+        {
+            "path": "registry/default/button-group/button-group.tsx",
+            "type": "registry:ui",
+            "target": "components/ui/button-group.tsx"
+        }
+    ]
+}

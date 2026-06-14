@@ -1,0 +1,16 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+    "name": "collapsible",
+    "type": "registry:ui",
+    "title": "Collapsible",
+    "description": "An interactive disclosure primitive for showing and hiding content.",
+    "dependencies": ["react-aria-components"],
+    "registryDependencies": ["@racket-ui/cva"],
+    "files": [
+        {
+            "path": "registry/default/collapsible/collapsible.tsx",
+            "type": "registry:ui",
+            "target": "components/ui/collapsible.tsx"
+        }
+    ]
+}

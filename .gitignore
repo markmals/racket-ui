@@ -1,0 +1,46 @@
+node_modules
+dist
+.DS_Store
+*.local
+.vite
+
+# Generated registry distribution artifacts
+public/r
+
+# Generated from registry/default canonical source via `mise run registry:sync`
+/lib/cva.ts
+/components/ui
+/app/globals.css
+
+# TanStack Router generated route tree
+/app/routeTree.gen.ts
+
+# Install fixtures' installed output
+fixtures/*/node_modules
+fixtures/*/dist
+
+# Codex fan-out scratch
+.codex-schemas
+.codex-results
+.codex-prompts
+
+# Claude Code dynamic workflow scripts
+**/*.workflow.js
+
+# TanStack Router metadata
+.tanstack
+
+# Environment variables (secrets). `*.local` above already covers .env.local;
+# these add a plain .env and per-mode files (.env.production, etc.).
+.env
+.env.*
+!.env.example
+
+# Test coverage output
+coverage
+
+# TypeScript incremental build info
+*.tsbuildinfo
+
+# Logs
+*.log

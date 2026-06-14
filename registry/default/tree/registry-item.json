@@ -1,0 +1,16 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+    "name": "tree",
+    "type": "registry:ui",
+    "title": "Tree",
+    "description": "A hierarchical tree component with keyboard navigation, expand/collapse chevrons, selection, and optional leading icons, built on React Aria.",
+    "dependencies": ["react-aria-components", "@tabler/icons-react"],
+    "registryDependencies": ["@racket-ui/cva"],
+    "files": [
+        {
+            "path": "registry/default/tree/tree.tsx",
+            "type": "registry:ui",
+            "target": "components/ui/tree.tsx"
+        }
+    ]
+}

@@ -1,0 +1,16 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+    "name": "radio-group",
+    "type": "registry:ui",
+    "title": "Radio Group",
+    "description": "A set of radio buttons built on React Aria RadioGroup.",
+    "dependencies": ["react-aria-components"],
+    "registryDependencies": ["@racket-ui/cva"],
+    "files": [
+        {
+            "path": "registry/default/radio-group/radio-group.tsx",
+            "type": "registry:ui",
+            "target": "components/ui/radio-group.tsx"
+        }
+    ]
+}

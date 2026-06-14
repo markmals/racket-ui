@@ -1,0 +1,15 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+    "name": "card",
+    "type": "registry:ui",
+    "title": "Card",
+    "description": "A content container with header, content, and footer sections.",
+    "registryDependencies": ["@racket-ui/cva"],
+    "files": [
+        {
+            "path": "registry/default/card/card.tsx",
+            "type": "registry:ui",
+            "target": "components/ui/card.tsx"
+        }
+    ]
+}

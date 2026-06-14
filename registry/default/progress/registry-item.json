@@ -1,0 +1,16 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+    "name": "progress",
+    "type": "registry:ui",
+    "title": "Progress",
+    "description": "A progress indicator built on React Aria ProgressBar.",
+    "dependencies": ["react-aria-components"],
+    "registryDependencies": ["@racket-ui/cva"],
+    "files": [
+        {
+            "path": "registry/default/progress/progress.tsx",
+            "type": "registry:ui",
+            "target": "components/ui/progress.tsx"
+        }
+    ]
+}

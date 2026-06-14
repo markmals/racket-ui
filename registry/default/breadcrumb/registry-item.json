@@ -1,0 +1,16 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+    "name": "breadcrumb",
+    "type": "registry:ui",
+    "title": "Breadcrumb",
+    "description": "Displays the path to the current resource using static navigation semantics.",
+    "dependencies": ["@tabler/icons-react"],
+    "registryDependencies": ["@racket-ui/cva"],
+    "files": [
+        {
+            "path": "registry/default/breadcrumb/breadcrumb.tsx",
+            "type": "registry:ui",
+            "target": "components/ui/breadcrumb.tsx"
+        }
+    ]
+}

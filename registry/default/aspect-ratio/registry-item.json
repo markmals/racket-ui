@@ -1,0 +1,16 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+    "name": "aspect-ratio",
+    "type": "registry:ui",
+    "title": "Aspect Ratio",
+    "description": "A static layout wrapper that preserves a chosen aspect ratio.",
+    "dependencies": [],
+    "registryDependencies": ["@racket-ui/cva"],
+    "files": [
+        {
+            "path": "registry/default/aspect-ratio/aspect-ratio.tsx",
+            "type": "registry:ui",
+            "target": "components/ui/aspect-ratio.tsx"
+        }
+    ]
+}

@@ -1,0 +1,16 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+    "name": "sheet",
+    "type": "registry:ui",
+    "title": "Sheet",
+    "description": "A modal edge panel built on React Aria overlay primitives.",
+    "dependencies": ["react-aria-components", "@tabler/icons-react"],
+    "registryDependencies": ["@racket-ui/cva", "@racket-ui/button"],
+    "files": [
+        {
+            "path": "registry/default/sheet/sheet.tsx",
+            "type": "registry:ui",
+            "target": "components/ui/sheet.tsx"
+        }
+    ]
+}

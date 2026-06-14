@@ -1,0 +1,16 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+    "name": "resizable",
+    "type": "registry:ui",
+    "title": "Resizable",
+    "description": "Accessible resizable panel groups and handles built on react-resizable-panels.",
+    "dependencies": ["react-resizable-panels", "@tabler/icons-react"],
+    "registryDependencies": ["@racket-ui/cva"],
+    "files": [
+        {
+            "path": "registry/default/resizable/resizable.tsx",
+            "type": "registry:ui",
+            "target": "components/ui/resizable.tsx"
+        }
+    ]
+}

@@ -1,0 +1,16 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+    "name": "table",
+    "type": "registry:ui",
+    "title": "Table",
+    "description": "A responsive table primitive with header, body, footer, row, cell, and caption parts.",
+    "dependencies": [],
+    "registryDependencies": ["@racket-ui/cva"],
+    "files": [
+        {
+            "path": "registry/default/table/table.tsx",
+            "type": "registry:ui",
+            "target": "components/ui/table.tsx"
+        }
+    ]
+}

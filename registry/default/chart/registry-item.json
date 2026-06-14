@@ -1,0 +1,16 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+    "name": "chart",
+    "type": "registry:ui",
+    "title": "Chart",
+    "description": "A recharts-based chart container with CSS-variable theming, tooltip, and legend components.",
+    "dependencies": ["recharts"],
+    "registryDependencies": ["@racket-ui/cva"],
+    "files": [
+        {
+            "path": "registry/default/chart/chart.tsx",
+            "type": "registry:ui",
+            "target": "components/ui/chart.tsx"
+        }
+    ]
+}

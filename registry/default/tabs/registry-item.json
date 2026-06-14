@@ -1,0 +1,16 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+    "name": "tabs",
+    "type": "registry:ui",
+    "title": "Tabs",
+    "description": "Tabbed interface built on React Aria Tabs, with shadcn's value-keyed API.",
+    "dependencies": ["react-aria-components"],
+    "registryDependencies": ["@racket-ui/cva"],
+    "files": [
+        {
+            "path": "registry/default/tabs/tabs.tsx",
+            "type": "registry:ui",
+            "target": "components/ui/tabs.tsx"
+        }
+    ]
+}

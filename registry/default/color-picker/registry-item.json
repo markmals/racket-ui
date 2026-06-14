@@ -1,0 +1,16 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+    "name": "color-picker",
+    "type": "registry:ui",
+    "title": "Color Picker",
+    "description": "A color picker built with React Aria Components featuring a 2D color area, hue slider, hex input, and optional preset swatches.",
+    "dependencies": ["react-aria-components"],
+    "registryDependencies": ["@racket-ui/cva", "@racket-ui/button"],
+    "files": [
+        {
+            "path": "registry/default/color-picker/color-picker.tsx",
+            "type": "registry:ui",
+            "target": "components/ui/color-picker.tsx"
+        }
+    ]
+}

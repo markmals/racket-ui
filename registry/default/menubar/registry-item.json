@@ -1,0 +1,16 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+    "name": "menubar",
+    "type": "registry:ui",
+    "title": "Menubar",
+    "description": "A horizontal application menu bar built with React Aria menu primitives.",
+    "dependencies": ["react-aria-components", "@tabler/icons-react"],
+    "registryDependencies": ["@racket-ui/cva"],
+    "files": [
+        {
+            "path": "registry/default/menubar/menubar.tsx",
+            "type": "registry:ui",
+            "target": "components/ui/menubar.tsx"
+        }
+    ]
+}

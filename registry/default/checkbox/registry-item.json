@@ -1,0 +1,16 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+    "name": "checkbox",
+    "type": "registry:ui",
+    "title": "Checkbox",
+    "description": "A checkbox built on React Aria Checkbox with Tabler indicators.",
+    "dependencies": ["react-aria-components", "@tabler/icons-react"],
+    "registryDependencies": ["@racket-ui/cva"],
+    "files": [
+        {
+            "path": "registry/default/checkbox/checkbox.tsx",
+            "type": "registry:ui",
+            "target": "components/ui/checkbox.tsx"
+        }
+    ]
+}

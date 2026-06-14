@@ -1,0 +1,16 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+    "name": "scroll-area",
+    "type": "registry:ui",
+    "title": "Scroll Area",
+    "description": "A styled scroll container with optional scrollbar that preserves shadcn's ScrollArea and ScrollBar exports using native overflow and Tailwind utilities.",
+    "dependencies": [],
+    "registryDependencies": ["@racket-ui/cva"],
+    "files": [
+        {
+            "path": "registry/default/scroll-area/scroll-area.tsx",
+            "type": "registry:ui",
+            "target": "components/ui/scroll-area.tsx"
+        }
+    ]
+}

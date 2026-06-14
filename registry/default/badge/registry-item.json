@@ -1,0 +1,15 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+    "name": "badge",
+    "type": "registry:ui",
+    "title": "Badge",
+    "description": "A small status descriptor built with cva@beta and tailwind-merge.",
+    "registryDependencies": ["@racket-ui/cva"],
+    "files": [
+        {
+            "path": "registry/default/badge/badge.tsx",
+            "type": "registry:ui",
+            "target": "components/ui/badge.tsx"
+        }
+    ]
+}

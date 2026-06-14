@@ -1,0 +1,16 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+    "name": "spinner",
+    "type": "registry:ui",
+    "title": "Spinner",
+    "description": "An animated loading indicator using a Tabler icon.",
+    "dependencies": ["@tabler/icons-react"],
+    "registryDependencies": ["@racket-ui/cva"],
+    "files": [
+        {
+            "path": "registry/default/spinner/spinner.tsx",
+            "type": "registry:ui",
+            "target": "components/ui/spinner.tsx"
+        }
+    ]
+}

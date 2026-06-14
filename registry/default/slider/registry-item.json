@@ -1,0 +1,16 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+    "name": "slider",
+    "type": "registry:ui",
+    "title": "Slider",
+    "description": "A React Aria slider styled to match shadcn/ui.",
+    "dependencies": ["react-aria-components"],
+    "registryDependencies": ["@racket-ui/cva"],
+    "files": [
+        {
+            "path": "registry/default/slider/slider.tsx",
+            "type": "registry:ui",
+            "target": "components/ui/slider.tsx"
+        }
+    ]
+}

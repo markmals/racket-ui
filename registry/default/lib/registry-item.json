@@ -1,0 +1,15 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+    "name": "cva",
+    "type": "registry:lib",
+    "title": "CVA",
+    "description": "Configured cva@beta helpers (cva, cx, compose) wired to tailwind-merge. Replaces the classic shadcn cn helper.",
+    "dependencies": ["cva@beta", "tailwind-merge"],
+    "files": [
+        {
+            "path": "registry/default/lib/cva.ts",
+            "type": "registry:lib",
+            "target": "lib/cva.ts"
+        }
+    ]
+}

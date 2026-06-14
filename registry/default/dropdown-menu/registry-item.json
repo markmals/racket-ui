@@ -1,0 +1,16 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+    "name": "dropdown-menu",
+    "type": "registry:ui",
+    "title": "Dropdown Menu",
+    "description": "Displays a menu of actions or options in a React Aria popover.",
+    "dependencies": ["react-aria-components", "@tabler/icons-react"],
+    "registryDependencies": ["@racket-ui/cva"],
+    "files": [
+        {
+            "path": "registry/default/dropdown-menu/dropdown-menu.tsx",
+            "type": "registry:ui",
+            "target": "components/ui/dropdown-menu.tsx"
+        }
+    ]
+}

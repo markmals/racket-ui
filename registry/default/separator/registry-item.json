@@ -1,0 +1,16 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+    "name": "separator",
+    "type": "registry:ui",
+    "title": "Separator",
+    "description": "A visual or semantic divider, built on React Aria Separator.",
+    "dependencies": ["react-aria-components"],
+    "registryDependencies": ["@racket-ui/cva"],
+    "files": [
+        {
+            "path": "registry/default/separator/separator.tsx",
+            "type": "registry:ui",
+            "target": "components/ui/separator.tsx"
+        }
+    ]
+}

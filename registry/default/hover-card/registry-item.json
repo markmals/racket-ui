@@ -1,0 +1,16 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+    "name": "hover-card",
+    "type": "registry:ui",
+    "title": "Hover Card",
+    "description": "A hover and focus activated popover for previewing contextual content.",
+    "dependencies": ["react-aria-components"],
+    "registryDependencies": ["@racket-ui/cva"],
+    "files": [
+        {
+            "path": "registry/default/hover-card/hover-card.tsx",
+            "type": "registry:ui",
+            "target": "components/ui/hover-card.tsx"
+        }
+    ]
+}

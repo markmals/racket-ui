@@ -1,0 +1,16 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+    "name": "carousel",
+    "type": "registry:ui",
+    "title": "Carousel",
+    "description": "A carousel component with keyboard navigation built on embla-carousel-react.",
+    "dependencies": ["embla-carousel-react", "@tabler/icons-react"],
+    "registryDependencies": ["@racket-ui/cva", "@racket-ui/button"],
+    "files": [
+        {
+            "path": "registry/default/carousel/carousel.tsx",
+            "type": "registry:ui",
+            "target": "components/ui/carousel.tsx"
+        }
+    ]
+}

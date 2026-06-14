@@ -1,0 +1,16 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+    "name": "input-otp",
+    "type": "registry:ui",
+    "title": "Input OTP",
+    "description": "An accessible one-time password input built with a single hidden text input overlaid by styled slot boxes, with keyboard navigation and paste support.",
+    "dependencies": ["@tabler/icons-react"],
+    "registryDependencies": ["@racket-ui/cva"],
+    "files": [
+        {
+            "path": "registry/default/input-otp/input-otp.tsx",
+            "type": "registry:ui",
+            "target": "components/ui/input-otp.tsx"
+        }
+    ]
+}

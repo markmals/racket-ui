@@ -1,0 +1,16 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+    "name": "drop-zone",
+    "type": "registry:ui",
+    "title": "Drop Zone",
+    "description": "A drag-and-drop target area with a dashed border and an integrated file-picker trigger, built on React Aria DropZone and FileTrigger.",
+    "dependencies": ["react-aria-components", "@tabler/icons-react"],
+    "registryDependencies": ["@racket-ui/cva", "@racket-ui/button"],
+    "files": [
+        {
+            "path": "registry/default/drop-zone/drop-zone.tsx",
+            "type": "registry:ui",
+            "target": "components/ui/drop-zone.tsx"
+        }
+    ]
+}

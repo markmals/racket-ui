@@ -1,0 +1,16 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+    "name": "pagination",
+    "type": "registry:ui",
+    "title": "Pagination",
+    "description": "A shadcn-compatible pagination component for navigating paged content.",
+    "dependencies": ["@tabler/icons-react"],
+    "registryDependencies": ["@racket-ui/cva", "@racket-ui/button"],
+    "files": [
+        {
+            "path": "registry/default/pagination/pagination.tsx",
+            "type": "registry:ui",
+            "target": "components/ui/pagination.tsx"
+        }
+    ]
+}
